@@ -9,11 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".checkSessionsView"></activity>
-        <activity android:name=".gymInfoView" />
-        <activity android:name=".sessionInfoView" />
-        <activity android:name=".memberView" />
-        <activity android:name=".trainerView" />
+        <activity android:name=".TrainerViewSessionsView"></activity>
+        <activity android:name=".ViewGymInfoView" />
+        <activity android:name=".TrainerViewSessionInfoView" />
+        <activity android:name=".MemberMainPageView" />
+        <activity android:name=".TrainerMainPageView" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

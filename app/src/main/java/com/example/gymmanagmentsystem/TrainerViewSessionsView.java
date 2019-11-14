@@ -4,11 +4,11 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class memberView extends AppCompatActivity {
+public class TrainerViewSessionsView extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_member_view);
+        setContentView(R.layout.activity_check_sessions_view);
     }
 }

@@ -13,21 +13,25 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button memberBtn = (Button)findViewById(R.id.memberBtn);
-        memberBtn.setOnClickListener(new View.OnClickListener() {
+        Button signInBtn = (Button)findViewById(R.id.signInBtn);
+        signInBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent startIntent = new Intent(getApplicationContext(),memberView.class);
-                startActivity(startIntent);
+                //Intent startIntent = new Intent(getApplicationContext(),MemberMainPageView.class);
+                //startActivity(startIntent);
+
+                //TODO TAKE TO SIGN IN PAGE
             }
         });
 
-        Button trainerBtn = (Button)findViewById(R.id.trainerBtn);
-        trainerBtn.setOnClickListener(new View.OnClickListener() {
+        Button createAccountBtn = (Button)findViewById(R.id.createAccountBtn);
+        createAccountBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent startIntent = new Intent(getApplicationContext(),trainerView.class);
-                startActivity(startIntent);
+                //Intent startIntent = new Intent(getApplicationContext(),TrainerMainPageView.class);
+                //startActivity(startIntent);
+
+                //TODO TAKE TO SIGN UP (CREATE ACCOUNT) PAGE
             }
         });
     }

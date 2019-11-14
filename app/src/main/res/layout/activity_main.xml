@@ -20,7 +20,7 @@
         app:srcCompat="@drawable/gymbackg" />
 
     <Button
-        android:id="@+id/trainerBtn"
+        android:id="@+id/createAccountBtn"
         android:layout_width="match_parent"
         android:layout_height="55dp"
         android:layout_marginStart="24dp"
@@ -30,7 +30,7 @@
         android:bottomLeftRadius="10dp"
         android:bottomRightRadius="10dp"
         android:fontFamily="sans-serif-condensed-medium"
-        android:text="TRAINER"
+        android:text="CREATE ACCOUNT"
         android:textAllCaps="false"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="#FFF"
@@ -59,7 +59,7 @@
         app:layout_constraintVertical_bias="0.123" />
 
     <Button
-        android:id="@+id/memberBtn"
+        android:id="@+id/signInBtn"
         android:layout_width="match_parent"
         android:layout_height="55dp"
         android:layout_marginStart="24dp"
@@ -69,7 +69,7 @@
         android:bottomLeftRadius="10dp"
         android:bottomRightRadius="10dp"
         android:fontFamily="sans-serif-condensed-medium"
-        android:text="MEMBER"
+        android:text="SIGN IN"
         android:textAllCaps="false"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="#FFF"
@@ -80,7 +80,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/memberBtn"
+        app:layout_constraintTop_toBottomOf="@id/signInBtn"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.763" />
 

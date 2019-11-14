@@ -7,7 +7,7 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class trainerView extends AppCompatActivity {
+public class TrainerMainPageView extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,7 +18,7 @@ public class trainerView extends AppCompatActivity {
         gymInfoBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent startIntent = new Intent(getApplicationContext(),gymInfoView.class);
+                Intent startIntent = new Intent(getApplicationContext(), ViewGymInfoView.class);
                 startActivity(startIntent);
             }
         });
@@ -27,7 +27,7 @@ public class trainerView extends AppCompatActivity {
         sessionInfoBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent startIntent = new Intent(getApplicationContext(),sessionInfoView.class);
+                Intent startIntent = new Intent(getApplicationContext(), TrainerViewSessionInfoView.class);
                 startActivity(startIntent);
             }
         });
