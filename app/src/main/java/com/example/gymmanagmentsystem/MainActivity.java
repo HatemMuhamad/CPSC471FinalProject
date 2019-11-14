@@ -17,10 +17,7 @@ public class MainActivity extends AppCompatActivity {
         signInBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Intent startIntent = new Intent(getApplicationContext(),MemberMainPageView.class);
-                //startActivity(startIntent);
-
-                //TODO TAKE TO SIGN IN PAGE
+                //TODO CHECK CREDENTIALS AGAINST DATABASE, SIGN INTO EITHER MEMBER OR TRAINER VIEW DEPENDING ON DATABASE DATA
             }
         });
 
@@ -28,10 +25,9 @@ public class MainActivity extends AppCompatActivity {
         createAccountBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Intent startIntent = new Intent(getApplicationContext(),TrainerMainPageView.class);
-                //startActivity(startIntent);
-
-                //TODO TAKE TO SIGN UP (CREATE ACCOUNT) PAGE
+                //TAKE TO SIGN UP (CREATE ACCOUNT) PAGE
+                Intent startIntent = new Intent(getApplicationContext(),SignUpView.class);
+                startActivity(startIntent);
             }
         });
     }

@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".TrainerViewSessionsView"></activity>
+        <activity android:name=".SignUpView"></activity>
+        <activity android:name=".TrainerViewSessionsView" />
         <activity android:name=".ViewGymInfoView" />
         <activity android:name=".TrainerViewSessionInfoView" />
         <activity android:name=".MemberMainPageView" />
