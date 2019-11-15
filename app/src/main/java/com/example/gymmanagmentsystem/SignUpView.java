@@ -39,9 +39,7 @@ public class SignUpView extends AppCompatActivity {
                 String provinceName = provinceTextView.getText().toString();
                 String postalCode = postalTextView.getText().toString();
 
-                System.out.println(phoneNumber);
-
-                //FIND A BETTER WAY TO DO THIS - I AM JUST DOING IT THIS WAY FOR NOW
+                //FIND A BETTER WAY TO DO THIS - I AM JUST DOING IT THIS WAY FOR NOW. IS THERE SOME ASSERT METHOD/FLAG ON THE TEXTVIEW ITSELF?
                 if(emergContactNumber.isEmpty()){
                     Toast.makeText(SignUpView.this, "You must supply an Emergency Contact Number",
                             Toast.LENGTH_SHORT).show();
@@ -67,7 +65,7 @@ public class SignUpView extends AppCompatActivity {
                             Toast.LENGTH_SHORT).show();
                 }
 
-                
+
             }
         });
     }
