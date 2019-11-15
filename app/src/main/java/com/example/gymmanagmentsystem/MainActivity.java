@@ -6,8 +6,6 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.sql.Connection;
-
 public class MainActivity extends AppCompatActivity {
 
     @Override
