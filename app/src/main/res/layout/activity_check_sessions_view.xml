@@ -6,6 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".TrainerViewSessionsView">
 
+
+
     <ImageView
         android:id="@+id/mainBackground"
         android:layout_width="526dp"
@@ -19,23 +21,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/gymbackg" />
-
-    <ScrollView
-        android:id="@+id/scrollView2"
-        android:layout_width="377dp"
-        android:layout_height="511dp"
-        app:layout_constraintBottom_toBottomOf="@+id/mainBackground"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.529"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.572">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" />
-    </ScrollView>
 
     <Switch
         android:id="@+id/Filter"
