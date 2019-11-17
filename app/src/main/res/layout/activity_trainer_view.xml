@@ -35,7 +35,7 @@
         app:layout_constraintVertical_bias="0.148" />
 
     <Button
-        android:id="@+id/accountInfoBtn"
+        android:id="@+id/viewAccountBtn"
         android:layout_width="match_parent"
         android:layout_height="55dp"
         android:layout_marginStart="24dp"
@@ -45,7 +45,7 @@
         android:bottomLeftRadius="10dp"
         android:bottomRightRadius="10dp"
         android:fontFamily="sans-serif-condensed-medium"
-        android:text="ACCOUNT INFO"
+        android:text="VIEW ACCOUNT"
         android:textAllCaps="false"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="#DCDCDC"
