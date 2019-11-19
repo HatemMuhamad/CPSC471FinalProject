@@ -4,20 +4,54 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.io.DataOutputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
+import java.security.Policy;
+import java.security.SecureRandom;
+import java.util.HashMap;
+import java.util.Map;
 
 import static androidx.core.util.Preconditions.checkNotNull;
 
 public class SignUpView extends AppCompatActivity {
 
+    Database db;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up_view);
+
+//        new Thread(new Runnable() {
+//            @Override
+//            public void run() {
+//                // DO your work here
+//                // get the data
+//                if (activity_is_not_in_background) {
+//                    runOnUiThread(new Runnable() {
+//                        @Override
+//                        public void run() {
+//                            // update UI
+//                            runInBackground();
+//                        }
+//                    });
+//                } else {
+//                    runInBackground();
+//                }
+//            }
+//        }).start();
 
         final TextView emergContactNoTextView = (TextView)findViewById(R.id.ECNTextField);
         final TextView userPhoneNoTextView = (TextView) findViewById(R.id.phoneTextField);
@@ -32,12 +66,14 @@ public class SignUpView extends AppCompatActivity {
             public void onClick(View v) {
                 //TODO GENERATE UNIQUE GYMID AND SAVE SOMEWHERE
                 //TODO DATABASE WRITE - CREATE NEW USER WITH ALL OF THIS INFORMATION
+
                 String emergContactNumber = emergContactNoTextView.getText().toString();
                 String phoneNumber = userPhoneNoTextView.getText().toString();
                 String streetName = streetTextView.getText().toString();
                 String cityName = cityTextView.getText().toString();
                 String provinceName = provinceTextView.getText().toString();
                 String postalCode = postalTextView.getText().toString();
+
 
                 //FIND A BETTER WAY TO DO THIS - I AM JUST DOING IT THIS WAY FOR NOW. IS THERE SOME ASSERT METHOD/FLAG ON THE TEXTVIEW ITSELF?
                 if(emergContactNumber.isEmpty()){
@@ -66,7 +102,35 @@ public class SignUpView extends AppCompatActivity {
                 }
 
 
+                //create a unique gymID
+                SecureRandom random = new SecureRandom();
+                byte[] salt = new byte[16];
+                random.nextBytes(salt);
+
+                MessageDigest md = null;
+                try {
+                    md = MessageDigest.getInstance("SHA-512");
+                }
+                catch(Exception e){
+                    System.out.println(e);
+                }
+
+                md.update(salt);
+                byte[] hashedValue = md.digest(phoneNumber.getBytes(StandardCharsets.UTF_8));
+
+                String gymID = hashedValue.toString();
+
+                db.getDatabase().execSQL("INSERT INTO Person \n" +
+                        "(EmergencyContactPhone, PersonGymID, Phone, Street, City, ProvState, Postal, TFlag, MFlag)\n" +
+                        "VALUES (emergContactNoTextView, gymID, phoneNumber, streetName, cityName, provinceName, postalCode, 0, 1)");
             }
         });
     }
+
+    public void setDatabase(Database d){
+        db = d;
+    }
+
 }
+
+
