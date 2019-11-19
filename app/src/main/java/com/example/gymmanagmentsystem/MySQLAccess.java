@@ -14,6 +14,37 @@ public class MySQLAccess {
     private static ResultSet resultSet = null; //reset every time, fine being static
 
 
+	public static Connection getDBConnection() { //USE THIS FUNCTION TO GET THE dbConnection TO WRITE YOUR OWN STATEMENTS ELSEWHERE
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+
+		try {
+			dbConnection = DriverManager.getConnection("jdbc:mysql://localhost/cpsc471gymmanagementsystemschema?"
+					+ "user=root&password=Gmcia330@");
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		return dbConnection;
+	}
+
+	public static int closeDBConnection(){ //USE THIS FUNCTION TO CLOSE THE dbConnection AFTER WRITING YOUR OWN STATEMENTS ELSEWHERE
+		try {
+			dbConnection.close();
+		}catch(SQLException e){
+			e.printStackTrace();
+			return 0;
+		}
+
+		return 1;
+
+	}
+
+
+
 	//TODO change these to be properly structured queries that arent sql injectible
     public static int executeSQLQueryManipulation(String queryToExecute) {
     	try {
@@ -23,7 +54,7 @@ public class MySQLAccess {
 		}
     	
     	try {
-			dbConnection = DriverManager.getConnection("jdbc:mysql://localhost/propertymanagementsystemschema?" 
+			dbConnection = DriverManager.getConnection("jdbc:mysql://localhost/cpsc471gymmanagementsystemschema?"
 			+ "user=root&password=Gmcia330@");
 			
 			statement = dbConnection.createStatement();
@@ -55,7 +86,7 @@ public class MySQLAccess {
 		}
     	
     	try {
-			dbConnection = DriverManager.getConnection("jdbc:mysql://localhost/propertymanagementsystemschema?" 
+			dbConnection = DriverManager.getConnection("jdbc:mysql://localhost/cpsc471gymmanagementsystemschema?"
 			+ "user=root&password=Gmcia330@");
 			
 			statement = dbConnection.createStatement();
