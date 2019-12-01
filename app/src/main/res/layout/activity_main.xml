@@ -17,7 +17,7 @@
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/gymbackg" />
+        app:srcCompat="@drawable/memberbg" />
 
     <Button
         android:id="@+id/createAccountBtn"
@@ -98,58 +98,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.647" />
-
-    <Button
-        android:id="@+id/trainerBtn"
-        android:layout_width="155dp"
-        android:layout_height="55dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="24dp"
-        android:background="@drawable/orangebtn"
-        android:bottomLeftRadius="10dp"
-        android:bottomRightRadius="10dp"
-        android:fontFamily="sans-serif-condensed-medium"
-        android:text="TRAINER"
-        android:textAllCaps="false"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="#FFF"
-        android:textSize="20sp"
-        android:topLeftRadius="10dp"
-        android:topRightRadius="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/signInBtn"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <Button
-        android:id="@+id/memberBtn"
-        android:layout_width="155dp"
-        android:layout_height="55dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="24dp"
-        android:background="@drawable/orangebtn"
-        android:bottomLeftRadius="10dp"
-        android:bottomRightRadius="10dp"
-        android:fontFamily="sans-serif-condensed-medium"
-        android:text="MEMBER"
-        android:textAllCaps="false"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="#FFF"
-        android:textSize="20sp"
-        android:topLeftRadius="10dp"
-        android:topRightRadius="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/signInBtn"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

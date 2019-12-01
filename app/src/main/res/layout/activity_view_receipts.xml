@@ -4,9 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".TrainerViewSessionsView">
-
-
+    tools:context=".ViewReceipts">
 
     <ImageView
         android:id="@+id/mainBackground"
@@ -14,20 +12,19 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        android:contentDescription="background"
         android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/memberbg" />
+        app:srcCompat="@drawable/bluebg"/>
 
     <TextView
-        android:id="@+id/textView12"
+        android:id="@+id/ReceiptsView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-condensed-medium"
-        android:text="ONGOING SESSIONS:"
+        android:text="YOUR RECEIPTS:"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="#DCDCDC"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -45,7 +42,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.23">
+        app:layout_constraintVertical_bias="0.236">
 
         <LinearLayout
             android:layout_width="match_parent"

@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".editAccount"></activity>
+        <activity android:name=".ViewReceipts"></activity>
+        <activity android:name=".ViewMembershipInfo" />
+        <activity android:name=".editAccount" />
         <activity android:name=".viewAccount" />
         <activity android:name=".signInView" />
         <activity android:name=".SignUpView" />

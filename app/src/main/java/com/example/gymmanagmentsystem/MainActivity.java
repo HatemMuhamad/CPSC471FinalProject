@@ -32,23 +32,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(startIntent);
             }
         });
-        Button trainerBtn = (Button)findViewById(R.id.trainerBtn);
-        trainerBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //TODO CHECK CREDENTIALS AGAINST DATABASE, SIGN INTO EITHER MEMBER OR TRAINER VIEW DEPENDING ON DATABASE DATA
-                Intent startIntent = new Intent(getApplicationContext(),TrainerMainPageView.class);
-                startActivity(startIntent);
-            }
-        });
-        Button memberBtn = (Button)findViewById(R.id.memberBtn);
-        memberBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //TODO CHECK CREDENTIALS AGAINST DATABASE, SIGN INTO EITHER MEMBER OR TRAINER VIEW DEPENDING ON DATABASE DATA
-                Intent startIntent = new Intent(getApplicationContext(),MemberMainPageView.class);
-                startActivity(startIntent);
-            }
-        });
+
     }
 }
