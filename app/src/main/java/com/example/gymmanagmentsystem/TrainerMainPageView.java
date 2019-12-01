@@ -31,5 +31,14 @@ public class TrainerMainPageView extends AppCompatActivity {
                 startActivity(startIntent);
             }
         });
+
+        Button viewAccountBtn = (Button)findViewById(R.id.viewAccountBtn);
+        viewAccountBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent startIntent = new Intent(getApplicationContext(),viewAccount.class);
+                startActivity(startIntent);
+            }
+        });
     }
 }

@@ -1,2 +1,6 @@
+<<<<<<< HEAD
 include ':app', ':mysql-connector-java-8.0.18'
+=======
+include ':app', ':mysql-connector-java-8.0.15'
+>>>>>>> master
 rootProject.name='GymManagmentSystem'

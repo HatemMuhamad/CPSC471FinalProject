@@ -19,6 +19,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //TODO CHECK CREDENTIALS AGAINST DATABASE, SIGN INTO EITHER MEMBER OR TRAINER VIEW DEPENDING ON DATABASE DATA
+                Intent startIntent = new Intent(getApplicationContext(),signInView.class);
+                startActivity(startIntent);
             }
         });
 
@@ -34,5 +36,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(startIntent);
             }
         });
+
     }
 }
