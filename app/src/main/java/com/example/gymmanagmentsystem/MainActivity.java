@@ -8,7 +8,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
-    Database databaseHelper = new Database(this.getApplicationContext());
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +28,6 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 //Set database in sign up view
                 SignUpView signUpView = new SignUpView();
-                signUpView.setDatabase(databaseHelper);
 
                 //TAKE TO SIGN UP (CREATE ACCOUNT) PAGE
                 Intent startIntent = new Intent(getApplicationContext(),signUpView.getClass());

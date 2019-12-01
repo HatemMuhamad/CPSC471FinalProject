@@ -20,14 +20,14 @@ import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.Policy;
 import java.security.SecureRandom;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
 
 import static androidx.core.util.Preconditions.checkNotNull;
 
 public class SignUpView extends AppCompatActivity {
-
-    Database db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,28 +76,23 @@ public class SignUpView extends AppCompatActivity {
 
 
                 //FIND A BETTER WAY TO DO THIS - I AM JUST DOING IT THIS WAY FOR NOW. IS THERE SOME ASSERT METHOD/FLAG ON THE TEXTVIEW ITSELF?
-                if(emergContactNumber.isEmpty()){
+                if (emergContactNumber.isEmpty()) {
                     Toast.makeText(SignUpView.this, "You must supply an Emergency Contact Number",
                             Toast.LENGTH_SHORT).show();
-                }
-                else if(phoneNumber.isEmpty()){
-                    Toast.makeText(SignUpView.this,"You must supply a Phone Number",
+                } else if (phoneNumber.isEmpty()) {
+                    Toast.makeText(SignUpView.this, "You must supply a Phone Number",
                             Toast.LENGTH_SHORT).show();
-                }
-                else if(streetName.isEmpty()){
-                    Toast.makeText(SignUpView.this,"You must supply a Street Name",
+                } else if (streetName.isEmpty()) {
+                    Toast.makeText(SignUpView.this, "You must supply a Street Name",
                             Toast.LENGTH_SHORT).show();
-                }
-                else if(cityName.isEmpty()){
-                    Toast.makeText(SignUpView.this,"You must supply a City Name",
+                } else if (cityName.isEmpty()) {
+                    Toast.makeText(SignUpView.this, "You must supply a City Name",
                             Toast.LENGTH_SHORT).show();
-                }
-                else if(provinceName.isEmpty()){
-                    Toast.makeText(SignUpView.this,"You must supply a Province Number",
+                } else if (provinceName.isEmpty()) {
+                    Toast.makeText(SignUpView.this, "You must supply a Province Number",
                             Toast.LENGTH_SHORT).show();
-                }
-                else if(postalCode.isEmpty()){
-                    Toast.makeText(SignUpView.this,"You must supply a Postal Code",
+                } else if (postalCode.isEmpty()) {
+                    Toast.makeText(SignUpView.this, "You must supply a Postal Code",
                             Toast.LENGTH_SHORT).show();
                 }
 
@@ -110,8 +105,7 @@ public class SignUpView extends AppCompatActivity {
                 MessageDigest md = null;
                 try {
                     md = MessageDigest.getInstance("SHA-512");
-                }
-                catch(Exception e){
+                } catch (Exception e) {
                     System.out.println(e);
                 }
 
@@ -120,15 +114,43 @@ public class SignUpView extends AppCompatActivity {
 
                 String gymID = hashedValue.toString();
 
-                db.getDatabase().execSQL("INSERT INTO Person \n" +
-                        "(EmergencyContactPhone, PersonGymID, Phone, Street, City, ProvState, Postal, TFlag, MFlag)\n" +
-                        "VALUES (emergContactNoTextView, gymID, phoneNumber, streetName, cityName, provinceName, postalCode, 0, 1)");
+                final String emergContactNumberFinal = emergContactNumber;
+                final String gymIDFinal = gymID;
+                final String phoneNumberFinal = phoneNumber;
+                final String streetNameFinal = streetName;
+                final String cityNameFinal = cityName;
+                final String provinceNameFinal = provinceName;
+                final String postalCodeFinal = postalCode;
+
+                new Thread(new Runnable() { //MUST RUN SQL QUERIES ON BACKGROUND THREADS NOT TO PAUSE THE UI WITH LONG NETWORKING PROCESSES
+                    @Override
+                    public void run() {
+
+                        String registerUserQueryString = "INSERT INTO person (EmergencyContactPhone, PersonGymID, Phone, Street, City, ProvState, Postal, TFlag, MFlag) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                        PreparedStatement registerUserPreparedStatement = null;
+                        try {
+                            registerUserPreparedStatement = MySQLAccess.getDBConnection().prepareStatement(registerUserQueryString);
+
+                            registerUserPreparedStatement.setString(1, emergContactNumberFinal);
+                            registerUserPreparedStatement.setString(2, gymIDFinal);
+                            registerUserPreparedStatement.setString(3, phoneNumberFinal);
+                            registerUserPreparedStatement.setString(4, streetNameFinal);
+                            registerUserPreparedStatement.setString(5, cityNameFinal);
+                            registerUserPreparedStatement.setString(6, provinceNameFinal);
+                            registerUserPreparedStatement.setString(7, postalCodeFinal);
+                            registerUserPreparedStatement.setInt(1, 0);
+                            registerUserPreparedStatement.setInt(2, 1); //TODO WE NEED A WAY TO CHECK WHETHER THEY ARE A MEMBER OR A TRAIANER
+
+                            registerUserPreparedStatement.executeQuery();
+                        } catch (SQLException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }).start();
+
+
             }
         });
-    }
-
-    public void setDatabase(Database d){
-        db = d;
     }
 
 }
