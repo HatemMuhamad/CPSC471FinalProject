@@ -27,7 +27,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-condensed-medium"
-        android:text="ONGOING SESSIONS:"
+        android:text="MY SESSIONS:"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="#DCDCDC"
         app:layout_constraintBottom_toBottomOf="parent"

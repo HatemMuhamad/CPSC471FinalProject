@@ -24,13 +24,13 @@ public class editAccount extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_edit_account);
+        setContentView(R.layout.edit_account);
 
         Button saveChangesBtn = (Button)findViewById(R.id.saveChangesBtn);
         saveChangesBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent startIntent = new Intent(getApplicationContext(), viewAccount.class);
+                Intent startIntent = new Intent(getApplicationContext(), Account.class);
                 EditText IDText = (EditText) findViewById(R.id.IDTextField);
                 EditText ENCText = (EditText) findViewById(R.id.ECNTextField);
                 EditText streetText = (EditText) findViewById(R.id.streetTextField);

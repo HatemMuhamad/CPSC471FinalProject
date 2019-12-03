@@ -13,14 +13,14 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class viewAccount extends AppCompatActivity {
+public class Account extends AppCompatActivity {
     static Connection myConnection;
     private ResultSet rs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_view_account);
+        setContentView(R.layout.account);
         try {
             viewAccount(rs);
         }catch(SQLException e){
@@ -45,15 +45,6 @@ public class viewAccount extends AppCompatActivity {
                 "SELECT P.EmergencyContactPhone P.PersonGymID, P.Phone, P.Street, P.City, P.ProvState, P.Postal, P.MFlag FROM Person AS P WHERE P.PersonGymID = ? ");
         viewAccountInfo.setString (1, "personGymID");
         rs = viewAccountInfo.executeQuery();
-        if(getIntent().hasExtra("ID")){
-            TextView tv = (TextView) findViewById(R.id.IDTextView);
-            String text = getIntent().getExtras().getString("ID");
-            try {
-                tv.setText(rs.getString("PersonGymID"));
-            }catch(SQLException e){
-                e.printStackTrace();
-            }
-        }
         if(getIntent().hasExtra("ENC")){
             TextView tv = (TextView) findViewById(R.id.ENCTextView);
             String text = getIntent().getExtras().getString("ENC");
