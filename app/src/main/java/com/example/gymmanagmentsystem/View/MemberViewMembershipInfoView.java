@@ -1,10 +1,12 @@
-package com.example.gymmanagmentsystem;
+package com.example.gymmanagmentsystem.View;
 
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class ViewMembershipInfo extends AppCompatActivity {
+import com.example.gymmanagmentsystem.R;
+
+public class MemberViewMembershipInfoView extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -1,4 +1,4 @@
-package com.example.gymmanagmentsystem;
+package com.example.gymmanagmentsystem.View;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -6,7 +6,9 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class MainActivity extends AppCompatActivity {
+import com.example.gymmanagmentsystem.R;
+
+public class MainPageView extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //TODO CHECK CREDENTIALS AGAINST DATABASE, SIGN INTO EITHER MEMBER OR TRAINER VIEW DEPENDING ON DATABASE DATA
-                Intent startIntent = new Intent(getApplicationContext(),signInView.class);
+                Intent startIntent = new Intent(getApplicationContext(), LoginView.class);
                 startActivity(startIntent);
             }
         });
@@ -28,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //TAKE TO SIGN UP (CREATE ACCOUNT) PAGE
-                Intent startIntent = new Intent(getApplicationContext(),SignUpView.class);
+                Intent startIntent = new Intent(getApplicationContext(), CreateAccountView.class);
                 startActivity(startIntent);
             }
         });

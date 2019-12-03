@@ -1,4 +1,4 @@
-package com.example.gymmanagmentsystem;
+package com.example.gymmanagmentsystem.View;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,7 +8,9 @@ import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class editAccount extends AppCompatActivity {
+import com.example.gymmanagmentsystem.R;
+
+public class TrainerEditAccountInfoView extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,7 +22,7 @@ public class editAccount extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //TAKE TO SIGN UP (CREATE ACCOUNT) PAGE
-                Intent startIntent = new Intent(getApplicationContext(), viewAccount.class);
+                Intent startIntent = new Intent(getApplicationContext(), TrainerViewAccountInfoView.class);
                 EditText IDText = (EditText) findViewById(R.id.IDTextField);
                 EditText nameText = (EditText) findViewById(R.id.nameTextField);
                 EditText ENCText = (EditText) findViewById(R.id.ECNTextField);

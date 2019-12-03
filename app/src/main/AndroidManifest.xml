@@ -9,18 +9,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ViewReceipts"></activity>
-        <activity android:name=".ViewMembershipInfo" />
-        <activity android:name=".editAccount" />
-        <activity android:name=".viewAccount" />
-        <activity android:name=".signInView" />
-        <activity android:name=".SignUpView" />
-        <activity android:name=".TrainerViewSessionsView" />
-        <activity android:name=".ViewGymInfoView" />
-        <activity android:name=".TrainerViewSessionInfoView" />
-        <activity android:name=".MemberMainPageView" />
-        <activity android:name=".TrainerMainPageView" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".View.MemberViewReceiptView"></activity>
+        <activity android:name=".View.MemberViewMembershipInfoView" />
+        <activity android:name=".View.TrainerEditAccountInfoView" />
+        <activity android:name=".View.TrainerViewAccountInfoView" />
+        <activity android:name=".View.LoginView" />
+        <activity android:name=".View.CreateAccountView" />
+        <activity android:name=".View.TrainerViewSessionsView" />
+        <activity android:name=".View.TrainerViewGymInfoView" />
+        <activity android:name=".View.TrainerViewSessionInfoView" />
+        <activity android:name=".View.MemberMainPageView" />
+        <activity android:name=".View.TrainerMainPageView" />
+        <activity android:name=".View.MainPageView">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

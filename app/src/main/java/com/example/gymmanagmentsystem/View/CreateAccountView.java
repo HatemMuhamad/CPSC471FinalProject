@@ -1,4 +1,4 @@
-package com.example.gymmanagmentsystem;
+package com.example.gymmanagmentsystem.View;
 
 import android.os.Bundle;
 import android.view.View;
@@ -10,13 +10,15 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.gymmanagmentsystem.R;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.Random;
 
-public class SignUpView extends AppCompatActivity {
+public class CreateAccountView extends AppCompatActivity {
     private String personGymID;
     private String emergContactNumber;
     private String phoneNumber;
@@ -52,8 +54,8 @@ public class SignUpView extends AppCompatActivity {
                 //TODO GENERATE UNIQUE GYMID AND SAVE SOMEWHERE
                 //TODO DATABASE WRITE - CREATE NEW USER WITH ALL OF THIS INFORMATION
                 try{
-                    myConnection = DriverManager.getConnection("jdbc:mysql://localhost:3306/cpsc471_schema", "root",
-                            "Hatoom@1933");
+                    myConnection = DriverManager.getConnection("jdbc:mysql://localhost/cpsc471gymmanagementsystemschema?"
+                            + "user=root&password=Gmcia330@");
                 }catch(SQLException e){
                     e.printStackTrace();
                 }
@@ -70,22 +72,22 @@ public class SignUpView extends AppCompatActivity {
 
                 //FIND A BETTER WAY TO DO THIS - I AM JUST DOING IT THIS WAY FOR NOW. IS THERE SOME ASSERT METHOD/FLAG ON THE TEXTVIEW ITSELF?
                 if (emergContactNumber.isEmpty()) {
-                    Toast.makeText(SignUpView.this, "You must supply an Emergency Contact Number",
+                    Toast.makeText(CreateAccountView.this, "You must supply an Emergency Contact Number",
                             Toast.LENGTH_SHORT).show();
                 } else if (phoneNumber.isEmpty()) {
-                    Toast.makeText(SignUpView.this, "You must supply a Phone Number",
+                    Toast.makeText(CreateAccountView.this, "You must supply a Phone Number",
                             Toast.LENGTH_SHORT).show();
                 } else if (streetName.isEmpty()) {
-                    Toast.makeText(SignUpView.this, "You must supply a Street Name",
+                    Toast.makeText(CreateAccountView.this, "You must supply a Street Name",
                             Toast.LENGTH_SHORT).show();
                 } else if (cityName.isEmpty()) {
-                    Toast.makeText(SignUpView.this, "You must supply a City Name",
+                    Toast.makeText(CreateAccountView.this, "You must supply a City Name",
                             Toast.LENGTH_SHORT).show();
                 } else if (provinceName.isEmpty()) {
-                    Toast.makeText(SignUpView.this, "You must supply a Province Number",
+                    Toast.makeText(CreateAccountView.this, "You must supply a Province Number",
                             Toast.LENGTH_SHORT).show();
                 } else if (postalCode.isEmpty()) {
-                    Toast.makeText(SignUpView.this, "You must supply a Postal Code",
+                    Toast.makeText(CreateAccountView.this, "You must supply a Postal Code",
                             Toast.LENGTH_SHORT).show();
                 }
                 addListenerOnSpinnerItemSelection();

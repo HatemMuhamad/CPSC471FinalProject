@@ -1,4 +1,4 @@
-package com.example.gymmanagmentsystem;
+package com.example.gymmanagmentsystem.View;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,7 +8,9 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class viewAccount extends AppCompatActivity {
+import com.example.gymmanagmentsystem.R;
+
+public class TrainerViewAccountInfoView extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +35,7 @@ public class viewAccount extends AppCompatActivity {
         editAccBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent startIntent = new Intent(getApplicationContext(), editAccount.class);
+                Intent startIntent = new Intent(getApplicationContext(), TrainerEditAccountInfoView.class);
                 startActivity(startIntent);
             }
         });
