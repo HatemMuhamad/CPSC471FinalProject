@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.gymmanagmentsystem"
+    android:targetSandboxVersion="2"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="27"
+        android:targetSdkVersion="29" />
+
+    <application
+        android:allowBackup="true"
+        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+        android:debuggable="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:testOnly="true"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.example.gymmanagmentsystem.RentEquipment"
+            android:label="@string/title_activity_rent_equipment"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name="com.example.gymmanagmentsystem.ViewEquipment" />
+        <activity android:name="com.example.gymmanagmentsystem.editAccount" />
+        <activity android:name="com.example.gymmanagmentsystem.viewAccount" />
+        <activity android:name="com.example.gymmanagmentsystem.signInView" />
+        <activity android:name="com.example.gymmanagmentsystem.SignUpView" />
+        <activity android:name="com.example.gymmanagmentsystem.TrainerViewSessionsView" />
+        <activity android:name="com.example.gymmanagmentsystem.ViewGymInfoView" />
+        <activity android:name="com.example.gymmanagmentsystem.TrainerViewSessionInfoView" />
+        <activity android:name="com.example.gymmanagmentsystem.MemberMainPageView" />
+        <activity android:name="com.example.gymmanagmentsystem.TrainerMainPageView" />
+        <activity android:name="com.example.gymmanagmentsystem.MainActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+    </application>
+
+</manifest>

@@ -1,0 +1,92 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.gymmanagmentsystem"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="27"
+8-->C:\Users\thisi\Desktop\UNI STUFF\CPSC471\Project\Ahmed's Code\app\src\main\AndroidManifest.xml
+9        android:targetSdkVersion="29" />
+9-->C:\Users\thisi\Desktop\UNI STUFF\CPSC471\Project\Ahmed's Code\app\src\main\AndroidManifest.xml
+10
+11    <application
+11-->C:\Users\thisi\Desktop\UNI STUFF\CPSC471\Project\Ahmed's Code\app\src\main\AndroidManifest.xml:5:5-37:19
+12        android:allowBackup="true"
+12-->C:\Users\thisi\Desktop\UNI STUFF\CPSC471\Project\Ahmed's Code\app\src\main\AndroidManifest.xml:6:9-35
+13        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+13-->[androidx.core:core:1.0.1] C:\Users\thisi\.gradle\caches\transforms-2\files-2.1\c0a39027978b83a483a047f5c31d0c4e\core-1.0.1\AndroidManifest.xml:22:18-86
+14        android:debuggable="true"
+15        android:icon="@mipmap/ic_launcher"
+15-->C:\Users\thisi\Desktop\UNI STUFF\CPSC471\Project\Ahmed's Code\app\src\main\AndroidManifest.xml:7:9-43
+16        android:label="@string/app_name"
+16-->C:\Users\thisi\Desktop\UNI STUFF\CPSC471\Project\Ahmed's Code\app\src\main\AndroidManifest.xml:8:9-41
+17        android:roundIcon="@mipmap/ic_launcher_round"
+17-->C:\Users\thisi\Desktop\UNI STUFF\CPSC471\Project\Ahmed's Code\app\src\main\AndroidManifest.xml:9:9-54
+18        android:supportsRtl="true"
+18-->C:\Users\thisi\Desktop\UNI STUFF\CPSC471\Project\Ahmed's Code\app\src\main\AndroidManifest.xml:10:9-35
+19        android:testOnly="true"
+20        android:theme="@style/AppTheme" >
+20-->C:\Users\thisi\Desktop\UNI STUFF\CPSC471\Project\Ahmed's Code\app\src\main\AndroidManifest.xml:11:9-40
+21        <activity
+21-->C:\Users\thisi\Desktop\UNI STUFF\CPSC471\Project\Ahmed's Code\app\src\main\AndroidManifest.xml:12:9-15:68
+22            android:name="com.example.gymmanagmentsystem.RentEquipment"
+22-->C:\Users\thisi\Desktop\UNI STUFF\CPSC471\Project\Ahmed's Code\app\src\main\AndroidManifest.xml:13:13-42
+23            android:label="@string/title_activity_rent_equipment"
+23-->C:\Users\thisi\Desktop\UNI STUFF\CPSC471\Project\Ahmed's Code\app\src\main\AndroidManifest.xml:14:13-66
+24            android:theme="@style/AppTheme.NoActionBar" />
+24-->C:\Users\thisi\Desktop\UNI STUFF\CPSC471\Project\Ahmed's Code\app\src\main\AndroidManifest.xml:15:13-56
+25        <activity android:name="com.example.gymmanagmentsystem.ViewEquipment" />
+25-->C:\Users\thisi\Desktop\UNI STUFF\CPSC471\Project\Ahmed's Code\app\src\main\AndroidManifest.xml:16:9-51
+25-->C:\Users\thisi\Desktop\UNI STUFF\CPSC471\Project\Ahmed's Code\app\src\main\AndroidManifest.xml:16:19-48
+26        <activity android:name="com.example.gymmanagmentsystem.editAccount" />
+26-->C:\Users\thisi\Desktop\UNI STUFF\CPSC471\Project\Ahmed's Code\app\src\main\AndroidManifest.xml:17:9-49
+26-->C:\Users\thisi\Desktop\UNI STUFF\CPSC471\Project\Ahmed's Code\app\src\main\AndroidManifest.xml:17:19-46
+27        <activity android:name="com.example.gymmanagmentsystem.viewAccount" />
+27-->C:\Users\thisi\Desktop\UNI STUFF\CPSC471\Project\Ahmed's Code\app\src\main\AndroidManifest.xml:18:9-49
+27-->C:\Users\thisi\Desktop\UNI STUFF\CPSC471\Project\Ahmed's Code\app\src\main\AndroidManifest.xml:18:19-46
+28        <activity android:name="com.example.gymmanagmentsystem.signInView" />
+28-->C:\Users\thisi\Desktop\UNI STUFF\CPSC471\Project\Ahmed's Code\app\src\main\AndroidManifest.xml:19:9-48
+28-->C:\Users\thisi\Desktop\UNI STUFF\CPSC471\Project\Ahmed's Code\app\src\main\AndroidManifest.xml:19:19-45
+29        <activity android:name="com.example.gymmanagmentsystem.SignUpView" />
+29-->C:\Users\thisi\Desktop\UNI STUFF\CPSC471\Project\Ahmed's Code\app\src\main\AndroidManifest.xml:20:9-48
+29-->C:\Users\thisi\Desktop\UNI STUFF\CPSC471\Project\Ahmed's Code\app\src\main\AndroidManifest.xml:20:19-45
+30        <activity android:name="com.example.gymmanagmentsystem.TrainerViewSessionsView" />
+30-->C:\Users\thisi\Desktop\UNI STUFF\CPSC471\Project\Ahmed's Code\app\src\main\AndroidManifest.xml:21:9-61
+30-->C:\Users\thisi\Desktop\UNI STUFF\CPSC471\Project\Ahmed's Code\app\src\main\AndroidManifest.xml:21:19-58
+31        <activity android:name="com.example.gymmanagmentsystem.ViewGymInfoView" />
+31-->C:\Users\thisi\Desktop\UNI STUFF\CPSC471\Project\Ahmed's Code\app\src\main\AndroidManifest.xml:22:9-53
+31-->C:\Users\thisi\Desktop\UNI STUFF\CPSC471\Project\Ahmed's Code\app\src\main\AndroidManifest.xml:22:19-50
+32        <activity android:name="com.example.gymmanagmentsystem.TrainerViewSessionInfoView" />
+32-->C:\Users\thisi\Desktop\UNI STUFF\CPSC471\Project\Ahmed's Code\app\src\main\AndroidManifest.xml:23:9-64
+32-->C:\Users\thisi\Desktop\UNI STUFF\CPSC471\Project\Ahmed's Code\app\src\main\AndroidManifest.xml:23:19-61
+33        <activity android:name="com.example.gymmanagmentsystem.MemberMainPageView" />
+33-->C:\Users\thisi\Desktop\UNI STUFF\CPSC471\Project\Ahmed's Code\app\src\main\AndroidManifest.xml:24:9-56
+33-->C:\Users\thisi\Desktop\UNI STUFF\CPSC471\Project\Ahmed's Code\app\src\main\AndroidManifest.xml:24:19-53
+34        <activity android:name="com.example.gymmanagmentsystem.TrainerMainPageView" />
+34-->C:\Users\thisi\Desktop\UNI STUFF\CPSC471\Project\Ahmed's Code\app\src\main\AndroidManifest.xml:25:9-57
+34-->C:\Users\thisi\Desktop\UNI STUFF\CPSC471\Project\Ahmed's Code\app\src\main\AndroidManifest.xml:25:19-54
+35        <activity android:name="com.example.gymmanagmentsystem.MainActivity" >
+35-->C:\Users\thisi\Desktop\UNI STUFF\CPSC471\Project\Ahmed's Code\app\src\main\AndroidManifest.xml:26:9-32:20
+35-->C:\Users\thisi\Desktop\UNI STUFF\CPSC471\Project\Ahmed's Code\app\src\main\AndroidManifest.xml:26:19-47
+36            <intent-filter>
+36-->C:\Users\thisi\Desktop\UNI STUFF\CPSC471\Project\Ahmed's Code\app\src\main\AndroidManifest.xml:27:13-31:29
+37                <action android:name="android.intent.action.MAIN" />
+37-->C:\Users\thisi\Desktop\UNI STUFF\CPSC471\Project\Ahmed's Code\app\src\main\AndroidManifest.xml:28:17-69
+37-->C:\Users\thisi\Desktop\UNI STUFF\CPSC471\Project\Ahmed's Code\app\src\main\AndroidManifest.xml:28:25-66
+38
+39                <category android:name="android.intent.category.LAUNCHER" />
+39-->C:\Users\thisi\Desktop\UNI STUFF\CPSC471\Project\Ahmed's Code\app\src\main\AndroidManifest.xml:30:17-77
+39-->C:\Users\thisi\Desktop\UNI STUFF\CPSC471\Project\Ahmed's Code\app\src\main\AndroidManifest.xml:30:27-74
+40            </intent-filter>
+41        </activity>
+42
+43        <meta-data
+43-->C:\Users\thisi\Desktop\UNI STUFF\CPSC471\Project\Ahmed's Code\app\src\main\AndroidManifest.xml:34:9-36:57
+44            android:name="preloaded_fonts"
+44-->C:\Users\thisi\Desktop\UNI STUFF\CPSC471\Project\Ahmed's Code\app\src\main\AndroidManifest.xml:35:13-43
+45            android:resource="@array/preloaded_fonts" />
+45-->C:\Users\thisi\Desktop\UNI STUFF\CPSC471\Project\Ahmed's Code\app\src\main\AndroidManifest.xml:36:13-54
+46    </application>
+47
+48</manifest>
