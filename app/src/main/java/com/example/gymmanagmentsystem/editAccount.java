@@ -8,8 +8,19 @@ import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class editAccount extends AppCompatActivity {
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 
+public class editAccount extends AppCompatActivity {
+    static Connection myConnection;
+    String ID;
+    String ENC;
+    String street;
+    String prov;
+    String phone;
+    String postal;
+    String city;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,10 +30,8 @@ public class editAccount extends AppCompatActivity {
         saveChangesBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //TAKE TO SIGN UP (CREATE ACCOUNT) PAGE
                 Intent startIntent = new Intent(getApplicationContext(), viewAccount.class);
                 EditText IDText = (EditText) findViewById(R.id.IDTextField);
-                EditText nameText = (EditText) findViewById(R.id.nameTextField);
                 EditText ENCText = (EditText) findViewById(R.id.ECNTextField);
                 EditText streetText = (EditText) findViewById(R.id.streetTextField);
                 EditText provinceText = (EditText) findViewById(R.id.provinceTextField);
@@ -30,26 +39,34 @@ public class editAccount extends AppCompatActivity {
                 EditText postalText = (EditText) findViewById(R.id.postalTextField);
                 EditText cityText = (EditText) findViewById(R.id.cityTextField);
 
-                String ID = IDText.getText().toString();
-                String name = nameText.getText().toString();
-                String ENC = ENCText.getText().toString();
-                String street = streetText.getText().toString();
-                String prov = provinceText.getText().toString();
-                String phone = phoneText.getText().toString();
-                String postal = postalText.getText().toString();
-                String city = cityText.getText().toString();
+                 ID = IDText.getText().toString();
+                 ENC = ENCText.getText().toString();
+                 street = streetText.getText().toString();
+                 prov = provinceText.getText().toString();
+                 phone = phoneText.getText().toString();
+                 postal = postalText.getText().toString();
+                 city = cityText.getText().toString();
 
-                startIntent.putExtra("ID",ID);
-                startIntent.putExtra("NAME",name);
-                startIntent.putExtra("ENC",ENC);
-                startIntent.putExtra("STREET",street);
-                startIntent.putExtra("PROVINCE",prov);
-                startIntent.putExtra("PHONE",phone);
-                startIntent.putExtra("POSTAL",postal);
-                startIntent.putExtra("CITY",city);
+                 try{
+                     editAccount();
+                 }catch(SQLException e){
+                     e.printStackTrace();
+                 }
 
-                startActivity(startIntent);
             }
         });
+
+
+    }
+    void editAccount()throws SQLException {
+        PreparedStatement updateAccountInfo = myConnection.prepareStatement (
+                " UPDATE Person AS P SET P.emergencyContactPhone = ?, P.Phone = ?, P.Street = ?, P.City = ?, P.ProvState = ?, P.Postal = ? WHERE P.PersonGymID = ? ");
+        updateAccountInfo.setString (1, ENC);
+        updateAccountInfo.setString(2, ID);
+        updateAccountInfo.setString(3, phone);
+        updateAccountInfo.setString(4, street);
+        updateAccountInfo.setString(5, city);
+        updateAccountInfo.setString(6, prov);
+        updateAccountInfo.executeUpdate();
     }
 }
