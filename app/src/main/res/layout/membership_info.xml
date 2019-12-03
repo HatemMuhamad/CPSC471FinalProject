@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MembershipInfo">
+
+    <ImageView
+        android:id="@+id/mainBackground"
+        android:layout_width="526dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/bluebg"/>
+
+    <TextView
+    android:id="@+id/nextPaymentText"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:fontFamily="sans-serif-condensed-medium"
+    android:text="NEXT PAYMENT DATE:"
+    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+    android:textColor="#DCDCDC"
+    app:layout_constraintBottom_toBottomOf="@+id/mainBackground"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.039"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_bias="0.359" />
+
+<TextView
+    android:id="@+id/priceText"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:fontFamily="sans-serif-condensed-medium"
+    android:text="PRICE:"
+    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+    android:textColor="#DCDCDC"
+    app:layout_constraintBottom_toBottomOf="@+id/mainBackground"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.036"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_bias="0.281" />
+
+    <TextView
+        android:id="@+id/tanningRoomAccessText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:text="TANNING ROOM ACCESS:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#DCDCDC"
+        app:layout_constraintBottom_toBottomOf="@+id/mainBackground"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.043"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.429" />
+
+
+    <TextView
+        android:id="@+id/poolAccessText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:text="POOL ACCESS:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#DCDCDC"
+        app:layout_constraintBottom_toBottomOf="@+id/mainBackground"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.032"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.499" />
+
+    <TextView
+    android:id="@+id/textView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:fontFamily="sans-serif-condensed-medium"
+    android:text="MEMBERSHIP INFORMATION:"
+    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+    android:textColor="#DCDCDC"
+    app:layout_constraintBottom_toBottomOf="@+id/mainBackground"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.062"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_bias="0.148" />
+<TextView
+    android:id="@+id/nextPaymentDateTextView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:fontFamily="sans-serif-condensed-medium"
+    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+    android:textColor="#DCDCDC"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.938"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_bias="0.358" />
+
+<TextView
+    android:id="@+id/priceTextView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:fontFamily="sans-serif-condensed-medium"
+    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+    android:textColor="#DCDCDC"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.941"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_bias="0.271" />
+
+    <TextView
+    android:id="@+id/poolAccessTextView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:fontFamily="sans-serif-condensed-medium"
+    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+    android:textColor="#DCDCDC"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.938"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_bias="0.501" />
+
+<TextView
+    android:id="@+id/tanningRoomAccessTextView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:fontFamily="sans-serif-condensed-medium"
+    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+    android:textColor="#DCDCDC"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.941"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_bias="0.429" />
+
+<Button
+    android:id="@+id/viewReceiptsBtn"
+    android:layout_width="match_parent"
+    android:layout_height="55dp"
+    android:layout_marginStart="24dp"
+    android:layout_marginTop="16dp"
+    android:layout_marginEnd="24dp"
+    android:background="@drawable/memberviewbtns"
+    android:bottomLeftRadius="10dp"
+    android:bottomRightRadius="10dp"
+    android:fontFamily="sans-serif-condensed-medium"
+    android:text="VIEW RECEIPTS"
+    android:textAllCaps="false"
+    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+    android:textColor="#DCDCDC"
+    android:textSize="20sp"
+    android:topLeftRadius="10dp"
+    android:topRightRadius="10dp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.0"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_bias="0.909" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

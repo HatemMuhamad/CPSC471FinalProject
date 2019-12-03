@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">GymManagmentSystem</string>
+    <string name="title_activity_rent_equipment">RentEquipment</string>
+</resources>
