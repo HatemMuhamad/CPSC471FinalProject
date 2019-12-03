@@ -23,7 +23,7 @@ public class TrainerPage extends AppCompatActivity {
             }
         });
 
-        Button sessionInfoBtn = (Button)findViewById(R.id.viewSessionsBtn);
+        Button sessionInfoBtn = (Button)findViewById(R.id.bookSessionsBtn);
         sessionInfoBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
