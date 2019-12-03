@@ -49,51 +49,58 @@ public class SignUpView extends AppCompatActivity {
             @Override
             public void onClick(View v)  {
 
+            try {
+                Class.forName("com.mysql.cj.jdbc.Driver");
+            }catch(ClassNotFoundException e){
+                e.printStackTrace();
+            }
+
                 //TODO GENERATE UNIQUE GYMID AND SAVE SOMEWHERE
                 //TODO DATABASE WRITE - CREATE NEW USER WITH ALL OF THIS INFORMATION
                 try{
-                    myConnection = DriverManager.getConnection("jdbc:mysql://localhost:3306/cpsc471_schema", "root",
-                            "Hatoom@1933");
+                    myConnection = DriverManager.getConnection("jdbc:mysql://localhost:3306/cpsc471gymmanagementsystemschema", "root",
+                            "Gmcia330@");
+                    System.out.println("Connection Successfully Made");
                 }catch(SQLException e){
                     e.printStackTrace();
                 }
 
-
-                Random rand = new Random();
-                 personGymID = String.valueOf(rand.nextInt(10000));
-                 emergContactNumber = emergContactNoTextView.getText().toString();
-                 phoneNumber = userPhoneNoTextView.getText().toString();
-                 streetName = streetTextView.getText().toString();
-                 cityName = cityTextView.getText().toString();
-                 provinceName = provinceTextView.getText().toString();
-                 postalCode = postalTextView.getText().toString();
-
-                //FIND A BETTER WAY TO DO THIS - I AM JUST DOING IT THIS WAY FOR NOW. IS THERE SOME ASSERT METHOD/FLAG ON THE TEXTVIEW ITSELF?
-                if (emergContactNumber.isEmpty()) {
-                    Toast.makeText(SignUpView.this, "You must supply an Emergency Contact Number",
-                            Toast.LENGTH_SHORT).show();
-                } else if (phoneNumber.isEmpty()) {
-                    Toast.makeText(SignUpView.this, "You must supply a Phone Number",
-                            Toast.LENGTH_SHORT).show();
-                } else if (streetName.isEmpty()) {
-                    Toast.makeText(SignUpView.this, "You must supply a Street Name",
-                            Toast.LENGTH_SHORT).show();
-                } else if (cityName.isEmpty()) {
-                    Toast.makeText(SignUpView.this, "You must supply a City Name",
-                            Toast.LENGTH_SHORT).show();
-                } else if (provinceName.isEmpty()) {
-                    Toast.makeText(SignUpView.this, "You must supply a Province Number",
-                            Toast.LENGTH_SHORT).show();
-                } else if (postalCode.isEmpty()) {
-                    Toast.makeText(SignUpView.this, "You must supply a Postal Code",
-                            Toast.LENGTH_SHORT).show();
-                }
-                addListenerOnSpinnerItemSelection();
-                try{
-                    CreateUser();
-                }catch(SQLException e){
-                    e.printStackTrace();
-                }
+//                Random rand = new Random(); //TODO We need to make sure that this is unique as well as random
+//
+//                 personGymID = String.valueOf(rand.nextInt(10000));
+//                 emergContactNumber = emergContactNoTextView.getText().toString();
+//                 phoneNumber = userPhoneNoTextView.getText().toString();
+//                 streetName = streetTextView.getText().toString();
+//                 cityName = cityTextView.getText().toString();
+//                 provinceName = provinceTextView.getText().toString();
+//                 postalCode = postalTextView.getText().toString();
+//
+//                //FIND A BETTER WAY TO DO THIS - I AM JUST DOING IT THIS WAY FOR NOW. IS THERE SOME ASSERT METHOD/FLAG ON THE TEXTVIEW ITSELF?
+//                if (emergContactNumber.isEmpty()) {
+//                    Toast.makeText(SignUpView.this, "You must supply an Emergency Contact Number",
+//                            Toast.LENGTH_SHORT).show();
+//                } else if (phoneNumber.isEmpty()) {
+//                    Toast.makeText(SignUpView.this, "You must supply a Phone Number",
+//                            Toast.LENGTH_SHORT).show();
+//                } else if (streetName.isEmpty()) {
+//                    Toast.makeText(SignUpView.this, "You must supply a Street Name",
+//                            Toast.LENGTH_SHORT).show();
+//                } else if (cityName.isEmpty()) {
+//                    Toast.makeText(SignUpView.this, "You must supply a City Name",
+//                            Toast.LENGTH_SHORT).show();
+//                } else if (provinceName.isEmpty()) {
+//                    Toast.makeText(SignUpView.this, "You must supply a Province Number",
+//                            Toast.LENGTH_SHORT).show();
+//                } else if (postalCode.isEmpty()) {
+//                    Toast.makeText(SignUpView.this, "You must supply a Postal Code",
+//                            Toast.LENGTH_SHORT).show();
+//                }
+//                addListenerOnSpinnerItemSelection();
+//                try{
+//                    CreateUser();
+//                }catch(SQLException e){
+//                    e.printStackTrace();
+//                }
              }
         });
     }
