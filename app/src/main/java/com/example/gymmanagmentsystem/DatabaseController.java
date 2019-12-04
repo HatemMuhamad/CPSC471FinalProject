@@ -95,7 +95,7 @@ public class DatabaseController {
                 "SELECT * FROM session");
         ResultSet rs = viewOngoingSession.executeQuery();
         while (rs.next()) {
-            result += rs.getString("SessionID") + "," + rs.getString("PersonGymID") + "," + rs.getString("SessionType") + "," +
+            result += rs.getString("SessionID") + "," + rs.getString("SessionType") + "," +
                     rs.getString("MuscleGroup") + "," + rs.getString("TrainerID");
         }
         return result;
@@ -153,22 +153,13 @@ public class DatabaseController {
         }
         return result;
     }
-    public void bookSession(String SID, String PID, String sessionT, String mg, String TgymID, String MFN, String RN, Date date, Time startTime, Time endTime,int weightRange)throws SQLException{
+    public void bookSession(String SID, String PID)throws SQLException{
         PreparedStatement bookSession = myConnection.prepareStatement (
-                "INSERT INTO Ssssion VALUES (?,?,?,?,?); INSERT INTO reserves VALUES (?,?,?,?,?,?,?,?)");
+                "INSERT INTO books VALUES (?,?)");
         bookSession.setString(1, SID);
         bookSession.setString(2, PID);
-        bookSession.setString(3, sessionT);
-        bookSession.setString(4, mg);
-        bookSession.setString(5, TgymID);
         bookSession.setString(6, PID);
-        bookSession.setString(7, MFN);
-        bookSession.setString(8, RN);
         bookSession.setString(9, SID);
-        bookSession.setDate(10, date);
-        bookSession.setTime(11, startTime);
-        bookSession.setTime(12, endTime);
-        bookSession.setInt(13, weightRange);
         bookSession.executeUpdate();
 
     }
