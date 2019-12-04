@@ -12,7 +12,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+<<<<<<< HEAD
         System.out.println("Hello from Main");
+=======
+
+        DatabaseHelper sqlLiteDB = new DatabaseHelper(this.getApplicationContext());
+
+>>>>>>> JDBCWork
         Button signInBtn = (Button)findViewById(R.id.signInBtn);
         signInBtn.setOnClickListener(new View.OnClickListener() {
             @Override
