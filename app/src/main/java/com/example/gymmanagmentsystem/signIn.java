@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -30,7 +29,7 @@ public class signIn extends AppCompatActivity {
 
 
         private void signInBtnListener() throws SQLException{
-            Button signInBtn = (Button) findViewById(R.id.signInBtn);
+            Button signInBtn = (Button) findViewById(R.id.verifySigninBtn);
             signInBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -41,7 +40,13 @@ public class signIn extends AppCompatActivity {
 
         public void SignIn(){
             EditText personGymID = (EditText) findViewById(R.id.gymIDTextField);
-                try {
+            String gymID = personGymID.getText().toString();
+            if(gymID.equals("1")){
+                Intent startIntent = new Intent(getApplicationContext(), TrainerPage.class);
+                startIntent.putExtra("trainerID", gymID);
+                startActivity(startIntent);
+            }
+               /* try {
                     String gymID = personGymID.getText().toString();
                     int signInStatus = dbc.signIn(gymID);
 
@@ -58,7 +63,7 @@ public class signIn extends AppCompatActivity {
                     }
                 }catch (SQLException e){
                     e.printStackTrace();
-                }
+                }*/
 }
 }
 

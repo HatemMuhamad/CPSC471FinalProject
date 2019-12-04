@@ -101,12 +101,27 @@ public class DatabaseController {
         return result;
     }
 
-    public String viewBookedSessions(String PersonGymID) throws SQLException {
+    public String viewBookedSessions(String memberID) throws SQLException {
         String result = "";
         int count = 0;
         PreparedStatement viewBookedSession = myConnection.prepareStatement(
                 "SELECT S.sessionID, S.sessionType, S.MuscleGroup, R.StartTime FROM session AS S, reserves AS R WHERE S.PersonGymID = ? AND S.sessionID = R.sessionID");
-        viewBookedSession.setString(1, PersonGymID);
+        viewBookedSession.setString(1, memberID);
+        ResultSet rs = viewBookedSession.executeQuery();
+        while (rs.next()) {
+            result += rs.getString("SessionID") + "," + rs.getString("PersonGymID") + "," + rs.getString("SessionType") + "," +
+                    rs.getString("MuscleGroup") + "," + rs.getString("TrainerID");
+            count++;
+        }
+        result +=","+ String.valueOf(count);
+        return result;
+    }
+    public String viewAssignedSessions(String trainerID) throws SQLException {
+        String result = "";
+        int count = 0;
+        PreparedStatement viewBookedSession = myConnection.prepareStatement(
+                "SELECT S.sessionID, S.sessionType, S.MuscleGroup, R.StartTime FROM session AS S, reserves AS R WHERE S.TrainerID = ? AND S.sessionID = R.sessionID");
+        viewBookedSession.setString(1, trainerID);
         ResultSet rs = viewBookedSession.executeQuery();
         while (rs.next()) {
             result += rs.getString("SessionID") + "," + rs.getString("PersonGymID") + "," + rs.getString("SessionType") + "," +

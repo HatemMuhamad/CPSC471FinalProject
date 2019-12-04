@@ -40,7 +40,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
         android:ems="10"
-        android:textColor="#000000"
+        android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.768"
@@ -49,7 +49,7 @@
         app:layout_constraintVertical_bias="0.174" />
 
     <Button
-        android:id="@+id/createAccountBtn"
+        android:id="@+id/verifySigninBtn"
         android:layout_width="155dp"
         android:layout_height="55dp"
         android:layout_marginStart="24dp"

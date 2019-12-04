@@ -46,4 +46,5 @@ public class TrainerPage extends AppCompatActivity {
             }
         });
     }
+
 }
