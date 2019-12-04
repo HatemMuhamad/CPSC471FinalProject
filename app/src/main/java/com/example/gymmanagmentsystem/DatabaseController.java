@@ -103,6 +103,7 @@ public class DatabaseController {
 
     public String viewBookedSessions(String PersonGymID) throws SQLException {
         String result = "";
+        int count = 0;
         PreparedStatement viewBookedSession = myConnection.prepareStatement(
                 "SELECT S.sessionID, S.sessionType, S.MuscleGroup, R.StartTime FROM session AS S, reserves AS R WHERE S.PersonGymID = ? AND S.sessionID = R.sessionID");
         viewBookedSession.setString(1, PersonGymID);
@@ -110,7 +111,9 @@ public class DatabaseController {
         while (rs.next()) {
             result += rs.getString("SessionID") + "," + rs.getString("PersonGymID") + "," + rs.getString("SessionType") + "," +
                     rs.getString("MuscleGroup") + "," + rs.getString("TrainerID");
+            count++;
         }
+        result +=","+ String.valueOf(count);
         return result;
     }
     public String viewGymInformation()throws SQLException{

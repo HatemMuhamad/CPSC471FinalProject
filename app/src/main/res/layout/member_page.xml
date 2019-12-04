@@ -120,7 +120,7 @@
         app:layout_constraintVertical_bias="0.224" />
 
     <Button
-        android:id="@+id/bookSessionsBtn"
+        android:id="@+id/checkSessionsBtn"
         android:layout_width="match_parent"
         android:layout_height="55dp"
         android:layout_marginStart="24dp"

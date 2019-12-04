@@ -26,7 +26,7 @@ public class TrainerPage extends AppCompatActivity {
             }
         });
 
-        Button sessionInfoBtn = (Button)findViewById(R.id.bookSessionsBtn);
+        Button sessionInfoBtn = (Button)findViewById(R.id.checkSessionsBtn);
         sessionInfoBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
