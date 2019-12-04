@@ -2,7 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.gymmanagmentsystem">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -11,17 +13,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ViewReceipts"></activity>
-        <activity android:name=".ViewMembershipInfo" />
+        <activity android:name=".OngoingSessions"></activity>
+        <activity android:name=".Receipts" />
+        <activity android:name=".MembershipInfo" />
         <activity android:name=".editAccount" />
-        <activity android:name=".viewAccount" />
-        <activity android:name=".signInView" />
-        <activity android:name=".SignUpView" />
+        <activity android:name=".Account" />
+        <activity android:name=".signIn" />
+        <activity android:name=".SignUp" />
         <activity android:name=".TrainerViewSessionsView" />
-        <activity android:name=".ViewGymInfoView" />
-        <activity android:name=".TrainerViewSessionInfoView" />
-        <activity android:name=".MemberMainPageView" />
-        <activity android:name=".TrainerMainPageView" />
+        <activity android:name=".GymInfo" />
+        <activity android:name=".TrainersSessions" />
+        <activity android:name=".MemberPage" />
+        <activity android:name=".TrainerPage" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

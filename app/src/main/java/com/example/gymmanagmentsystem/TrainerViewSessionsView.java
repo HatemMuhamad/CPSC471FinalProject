@@ -9,6 +9,6 @@ public class TrainerViewSessionsView extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_check_sessions_view);
+        setContentView(R.layout.trainers_sessions);
     }
 }

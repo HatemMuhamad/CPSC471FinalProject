@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".TrainerMainPageView">
+    tools:context=".TrainerPage">
 
     <ImageView
         android:id="@+id/mainBackground"
@@ -85,7 +85,7 @@
         app:layout_constraintVertical_bias="0.804" />
 
     <Button
-        android:id="@+id/viewSessionsBtn"
+        android:id="@+id/checkSessionsBtn"
         android:layout_width="match_parent"
         android:layout_height="55dp"
         android:layout_marginStart="24dp"
