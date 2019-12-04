@@ -16,16 +16,7 @@ public class DatabaseController {
     private final Context mainContext;
     private  Person person;
 
-    public DatabaseController(Context context, Person p) {
-        this.mainContext = context;
-        person = p;
-        try {
-            myConnection = DriverManager.getConnection("jdbc:mysql://localhost:3306/ensf480_schema", "root",
-                    "Hatoom@1933");
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
+
     public DatabaseController(Context context){
         this.mainContext = context;
     try {
@@ -43,6 +34,12 @@ public class DatabaseController {
         ResultSet rs = signIn.executeQuery();
 
         if (rs.next()) {
+            if(rs.getInt("MFlag") == 1){
+                person = new Member(PersonGymID);
+            }
+            else if(rs.getInt("MFlag") == 0){
+                person = new Trainer(PersonGymID);
+            }
             return (rs.getInt("MFlag"));
         } else {
             return 2;
@@ -64,11 +61,11 @@ public class DatabaseController {
         CreateUser.executeUpdate();
     }
 
-    public String viewAccountInformation() throws SQLException {
+    public String viewAccountInformation(String personGymID) throws SQLException {
         String result = "";
         PreparedStatement viewAccountInfo = myConnection.prepareStatement(
                 "SELECT P.EmergencyContactPhone P.PersonGymID, P.Phone, P.Street, P.City, P.ProvState, P.Postal, P.MFlag FROM person AS P WHERE P.PersonGymID = ? ");
-        viewAccountInfo.setString(1, person.getID());
+        viewAccountInfo.setString(1, personGymID);
         ResultSet rs = viewAccountInfo.executeQuery();
 
         while (rs.next()) {
@@ -79,7 +76,7 @@ public class DatabaseController {
         return result;
     }
 
-    public void editAccountInformation(String ENC, String PID, String phone, String street, String city, String provState, String postal) throws SQLException {
+    public void editAccountInformation(String ENC,String personGymID,String phone, String street, String city, String provState, String postal) throws SQLException {
         PreparedStatement updateAccountInfo = myConnection.prepareStatement(
                 " UPDATE person AS P SET P.emergencyContactPhone = ?, P.Phone = ?, P.Street = ?, P.City = ?, P.ProvState = ?, P.Postal = ? WHERE P.PersonGymID = ? ");
         updateAccountInfo.setString(1, ENC);
@@ -88,7 +85,7 @@ public class DatabaseController {
         updateAccountInfo.setString(4, city);
         updateAccountInfo.setString(5, provState);
         updateAccountInfo.setString(6, postal);
-        updateAccountInfo.setString(7, PID);
+        updateAccountInfo.setString(7, personGymID);
         updateAccountInfo.executeUpdate();
     }
 

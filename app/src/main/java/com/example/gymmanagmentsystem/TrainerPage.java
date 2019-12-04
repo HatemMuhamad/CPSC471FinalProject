@@ -8,9 +8,11 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class TrainerPage extends AppCompatActivity {
-
+    String trainerID;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Bundle extras = getIntent().getExtras();
+        trainerID = extras.getString("trainerID");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.trainer_page);
 
@@ -19,6 +21,7 @@ public class TrainerPage extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent startIntent = new Intent(getApplicationContext(), GymInfo.class);
+                startIntent.putExtra("personGymID", trainerID);
                 startActivity(startIntent);
             }
         });
@@ -28,6 +31,7 @@ public class TrainerPage extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent startIntent = new Intent(getApplicationContext(), TrainersSessions.class);
+                startIntent.putExtra("trainerID", trainerID);
                 startActivity(startIntent);
             }
         });
@@ -37,6 +41,7 @@ public class TrainerPage extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent startIntent = new Intent(getApplicationContext(), Account.class);
+                startIntent.putExtra("trainerID", trainerID);
                 startActivity(startIntent);
             }
         });
