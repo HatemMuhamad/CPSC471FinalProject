@@ -64,11 +64,11 @@ public class DatabaseController {
         CreateUser.executeUpdate();
     }
 
-    public String viewAccountInformation(String PersonGymID) throws SQLException {
+    public String viewAccountInformation() throws SQLException {
         String result = "";
         PreparedStatement viewAccountInfo = myConnection.prepareStatement(
                 "SELECT P.EmergencyContactPhone P.PersonGymID, P.Phone, P.Street, P.City, P.ProvState, P.Postal, P.MFlag FROM person AS P WHERE P.PersonGymID = ? ");
-        viewAccountInfo.setString(1, PersonGymID);
+        viewAccountInfo.setString(1, person.getID());
         ResultSet rs = viewAccountInfo.executeQuery();
 
         while (rs.next()) {
@@ -168,6 +168,9 @@ public class DatabaseController {
         reserveEquipment.setInt(6, weightRange);
         reserveEquipment.executeUpdate();
 
+    }
+    public Person getPerson(){
+        return person;
     }
 }
 

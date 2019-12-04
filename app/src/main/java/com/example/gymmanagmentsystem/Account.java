@@ -14,21 +14,21 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class Account extends AppCompatActivity {
-    static Connection myConnection;
-    private ResultSet rs;
+    DatabaseController dbc = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.account);
+        dbc = new DatabaseController(this);
         try {
-            viewAccount(rs);
-        }catch(SQLException e){
+            ViewAccount();
+        } catch (SQLException e) {
             e.printStackTrace();
         }
 
 
-        Button editAccBtn = (Button)findViewById(R.id.editAccountBtn);
+        Button editAccBtn = (Button) findViewById(R.id.editAccountBtn);
         editAccBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -40,59 +40,51 @@ public class Account extends AppCompatActivity {
 
     }
 
-    void viewAccount(ResultSet rs) throws SQLException{
-        PreparedStatement viewAccountInfo = myConnection.prepareStatement (
-                "SELECT P.EmergencyContactPhone P.PersonGymID, P.Phone, P.Street, P.City, P.ProvState, P.Postal, P.MFlag FROM Person AS P WHERE P.PersonGymID = ? ");
-        viewAccountInfo.setString (1, "personGymID");
-        rs = viewAccountInfo.executeQuery();
-        if(getIntent().hasExtra("ENC")){
-            TextView tv = (TextView) findViewById(R.id.ENCTextView);
-            String text = getIntent().getExtras().getString("ENC");
-            try {
-                tv.setText(rs.getString("EmergencyContactPhone"));
-            }catch(SQLException e){
-                e.printStackTrace();
+
+
+    public void ViewAccount() {
+        try {
+            TextView ENC = (TextView) findViewById(R.id.ENCTextView);
+            TextView st = (TextView) findViewById(R.id.streetTextView);
+            TextView prov = (TextView) findViewById(R.id.provinceTextView);
+            TextView phone = (TextView) findViewById(R.id.phoneTextView);
+            TextView postal = (TextView) findViewById(R.id.postalTextView);
+            TextView city = (TextView) findViewById(R.id.cityTextView);
+            String accountInfo = dbc.viewAccountInformation();
+            String[] accInfo = accountInfo.split(",");
+            String ENCres = accInfo[0];
+            String Stres = accInfo[1];
+            String Provres = accInfo[2];
+            String Phoneres = accInfo[3];
+            String postalres = accInfo[4];
+            String Cityres = accInfo[5];
+            if (ENCres.equals("NULL")) {
+                ENCres = "";
             }
-        }
-        if(getIntent().hasExtra("STREET")){
-            TextView tv = (TextView) findViewById(R.id.streetTextView);
-            try {
-                tv.setText(rs.getString("Street"));
-            }catch(SQLException e){
-                e.printStackTrace();
+            if (Stres.equals("NULL")) {
+                Stres = "";
             }
-        }
-        if(getIntent().hasExtra("PROVINCE")){
-            TextView tv = (TextView) findViewById(R.id.provinceTextView);
-            try {
-                tv.setText(rs.getString("ProvState"));
-            }catch(SQLException e){
-                e.printStackTrace();
+            if (Provres.equals("NULL")) {
+                Provres = "";
             }
-        }
-        if(getIntent().hasExtra("PHONE")){
-            TextView tv = (TextView) findViewById(R.id.phoneTextView);
-            try {
-                tv.setText(rs.getString("Phone"));
-            }catch(SQLException e){
-                e.printStackTrace();
+            if (Phoneres.equals("NULL")) {
+                Phoneres = "";
             }
-        }
-        if(getIntent().hasExtra("POSTAL")){
-            TextView tv = (TextView) findViewById(R.id.postalTextView);
-            try {
-                tv.setText(rs.getString("Postal"));
-            }catch(SQLException e){
-                e.printStackTrace();
+            if (postalres.equals("NULL")) {
+                postalres = "";
             }
-        }
-        if(getIntent().hasExtra("CITY")){
-            TextView tv = (TextView) findViewById(R.id.cityTextView);
-            try {
-                tv.setText(rs.getString("City"));
-            }catch(SQLException e){
-                e.printStackTrace();
+            if (Cityres.equals("NULL")) {
+                Cityres = "";
             }
+
+            ENC.setText(ENCres);
+            st.setText(Stres);
+            prov.setText(Provres);
+            phone.setText(Phoneres);
+            postal.setText(postalres);
+            city.setText(Cityres);
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
     }
 }
