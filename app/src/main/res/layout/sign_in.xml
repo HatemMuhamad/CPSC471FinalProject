@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SignUpView">
+    tools:context=".SignUp">
 
     <ImageView
         android:id="@+id/mainBackground"
@@ -17,7 +17,7 @@
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/memberbg" />
+        app:srcCompat="@drawable/bluebg" />
 
     <TextView
         android:id="@+id/textView5"
@@ -26,7 +26,7 @@
         android:fontFamily="sans-serif-condensed-medium"
         android:text="GYM ID:"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="#696969"
+        android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="@+id/mainBackground"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.131"
@@ -62,7 +62,7 @@
         android:text="SIGN IN"
         android:textAllCaps="false"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textColor="#696969"
+        android:textColor="#FFFFFF"
         android:textSize="20sp"
         android:topLeftRadius="10dp"
         android:topRightRadius="10dp"
@@ -70,6 +70,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.368" />
+        app:layout_constraintVertical_bias="0.324" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

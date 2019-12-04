@@ -1,6 +1,5 @@
 package com.example.gymmanagmentsystem;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -8,48 +7,71 @@ import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class editAccount extends AppCompatActivity {
+import java.sql.SQLException;
 
+public class editAccount extends AppCompatActivity {
+    DatabaseController dbc;
+    String trainerID;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Bundle extras = getIntent().getExtras();
+        trainerID = extras.getString("trainerID");
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_edit_account);
+        setContentView(R.layout.edit_account);
+        dbc = new DatabaseController(this);
+        try{
+            saveChangesBtnListener();
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
 
-        Button saveChangesBtn = (Button)findViewById(R.id.saveChangesBtn);
+    }
+    private void saveChangesBtnListener()throws SQLException {
+        Button saveChangesBtn = (Button) findViewById(R.id.saveChangesBtn);
         saveChangesBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //TAKE TO SIGN UP (CREATE ACCOUNT) PAGE
-                Intent startIntent = new Intent(getApplicationContext(), viewAccount.class);
-                EditText IDText = (EditText) findViewById(R.id.IDTextField);
-                EditText nameText = (EditText) findViewById(R.id.nameTextField);
-                EditText ENCText = (EditText) findViewById(R.id.ECNTextField);
-                EditText streetText = (EditText) findViewById(R.id.streetTextField);
-                EditText provinceText = (EditText) findViewById(R.id.provinceTextField);
-                EditText phoneText = (EditText) findViewById(R.id.phoneTextField);
-                EditText postalText = (EditText) findViewById(R.id.postalTextField);
-                EditText cityText = (EditText) findViewById(R.id.cityTextField);
-
-                String ID = IDText.getText().toString();
-                String name = nameText.getText().toString();
-                String ENC = ENCText.getText().toString();
-                String street = streetText.getText().toString();
-                String prov = provinceText.getText().toString();
-                String phone = phoneText.getText().toString();
-                String postal = postalText.getText().toString();
-                String city = cityText.getText().toString();
-
-                startIntent.putExtra("ID",ID);
-                startIntent.putExtra("NAME",name);
-                startIntent.putExtra("ENC",ENC);
-                startIntent.putExtra("STREET",street);
-                startIntent.putExtra("PROVINCE",prov);
-                startIntent.putExtra("PHONE",phone);
-                startIntent.putExtra("POSTAL",postal);
-                startIntent.putExtra("CITY",city);
-
-                startActivity(startIntent);
+                EditAccount();
             }
         });
     }
+    public void EditAccount(){
+        EditText ENCText = (EditText) findViewById(R.id.ECNTextField);
+        EditText streetText = (EditText) findViewById(R.id.streetTextField);
+        EditText provinceText = (EditText) findViewById(R.id.provinceTextField);
+        EditText phoneText = (EditText) findViewById(R.id.phoneTextField);
+        EditText postalText = (EditText) findViewById(R.id.postalTextField);
+        EditText cityText = (EditText) findViewById(R.id.cityTextField);
+
+        if (ENCText.getText().toString().equals("")){
+            ENCText.setText("NULL");
+        }
+        if (streetText.getText().toString().equals("")){
+            streetText.setText("NULL");
+        }
+        if (provinceText.getText().toString().equals("")){
+            provinceText.setText("NULL");
+        }
+        if (phoneText.getText().toString().equals("")){
+            phoneText.setText("NULL");
+        }
+        if (postalText.getText().toString().equals("")){
+            postalText.setText("NULL");
+        }
+        if (cityText.getText().toString().equals("")){
+            cityText.setText("NULL");
+        }
+        String ENC = ENCText.getText().toString();
+        String street = streetText.getText().toString();
+        String prov = provinceText.getText().toString();
+        String phone = phoneText.getText().toString();
+        String postal = postalText.getText().toString();
+        String city = cityText.getText().toString();
+        try{
+            dbc.editAccountInformation(ENC,trainerID,phone,street,city,prov,postal);
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+    }
+
 }
