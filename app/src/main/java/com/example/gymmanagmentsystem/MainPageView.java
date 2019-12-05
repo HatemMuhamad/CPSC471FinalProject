@@ -15,6 +15,8 @@ public class MainPageView extends AppCompatActivity {
 
         GymManagementController sqlLiteDB = new GymManagementController(this.getApplicationContext());
 
+
+
         Button signInBtn = (Button)findViewById(R.id.signInBtn);
         signInBtn.setOnClickListener(new View.OnClickListener() {
             @Override

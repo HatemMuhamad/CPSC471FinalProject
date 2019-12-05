@@ -30,10 +30,12 @@ public class editAccount extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 EditAccount();
+                finish();
             }
         });
     }
     public void EditAccount(){
+
         EditText ENCText = (EditText) findViewById(R.id.ECNTextField);
         EditText streetText = (EditText) findViewById(R.id.streetTextField);
         EditText provinceText = (EditText) findViewById(R.id.provinceTextField);
@@ -66,7 +68,7 @@ public class editAccount extends AppCompatActivity {
         String postal = postalText.getText().toString();
         String city = cityText.getText().toString();
         try{
-            GymManagementController.editAccountInformation(ENC,trainerID,phone,street,city,prov,postal);
+            GymManagementController.editAccountInformation(ENC,GymManagementController.getUserID(),phone,street,city,prov,postal);
         }catch (SQLException e){
             e.printStackTrace();
         }

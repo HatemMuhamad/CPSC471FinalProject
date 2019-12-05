@@ -20,20 +20,7 @@
         app:srcCompat="@drawable/bluebg" />
 
 
-    <TextView
-        android:id="@+id/IDText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="sans-serif-condensed-medium"
-        android:text="ID:"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="#DCDCDC"
-        app:layout_constraintBottom_toBottomOf="@+id/mainBackground"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.02"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.372" />
+
 
     <TextView
         android:id="@+id/phoneText"
@@ -139,19 +126,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.66" />
 
-    <EditText
-        android:id="@+id/IDTextField"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="number|phone"
-        android:textColor="#DCDCDC"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.938"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.342" />
+
 
     <EditText
         android:id="@+id/ECNTextField"
