@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/JDBCWorks.iml" filepath="$PROJECT_DIR$/JDBCWorks.iml" />
+      <module fileurl="file://$PROJECT_DIR$/GymManagmentSystem.iml" filepath="$PROJECT_DIR$/GymManagmentSystem.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mssql-jdbc-6.4.0.jre8/mssql-jdbc-6.4.0.jre8.iml" filepath="$PROJECT_DIR$/mssql-jdbc-6.4.0.jre8/mssql-jdbc-6.4.0.jre8.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mysql-connector-java-3.0.17-ga-bin/mysql-connector-java-3.0.17-ga-bin.iml" filepath="$PROJECT_DIR$/mysql-connector-java-3.0.17-ga-bin/mysql-connector-java-3.0.17-ga-bin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mysql-connector-java-6.0.6-bin/mysql-connector-java-6.0.6-bin.iml" filepath="$PROJECT_DIR$/mysql-connector-java-6.0.6-bin/mysql-connector-java-6.0.6-bin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mysql-connector-java-8.0.15/mysql-connector-java-8.0.15.iml" filepath="$PROJECT_DIR$/mysql-connector-java-8.0.15/mysql-connector-java-8.0.15.iml" />
     </modules>
   </component>
 </project>

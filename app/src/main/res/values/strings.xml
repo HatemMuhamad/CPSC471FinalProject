@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">GymManagmentSystem</string>
+    <string name="title_activity_check_sessions_view">TrainerViewSessionView</string>
+    <string name="title_activity_edit_account">editAccount</string>
+    <string name="title_activity_gym_info_view">ViewGymInfoView</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_member_view">MemberMainPageView</string>
+    <string name="title_activity_session_info_view">TrainerViewSessionInfoView</string>
+    <string name="title_activity_sign_in_view">SignInView</string>
+    <string name="title_activity_sign_up_view">SignUpView</string>
+    <string name="title_activity_trainer_view">TrainerMainPageView</string>
+    <string name="title_activity_view_account">viewAccount</string>
+    <string name="title_activity_view_membership_info">ViewMembershipInfo</string>
+    <string name="title_activity_view_receipts">ViewReceipts</string>
+    <string-array name="person_type">
+        <item>Member</item>
+        <item>Trainer</item>
+    </string-array>
+</resources>

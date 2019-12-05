@@ -13,9 +13,7 @@ public class MainPageView extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
         GymManagementController sqlLiteDB = new GymManagementController(this.getApplicationContext());
-
 
         Button signInBtn = (Button)findViewById(R.id.signInBtn);
         signInBtn.setOnClickListener(new View.OnClickListener() {
