@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ViewControllers.MainPageView">
+    tools:context=".MainPageView">
 
     <ImageView
         android:id="@+id/mainBackground"
@@ -20,7 +20,7 @@
         app:srcCompat="@drawable/memberbg" />
 
     <Button
-        android:id="@+id/createAccountBtn"
+        android:id="@+id/signUpBtn"
         android:layout_width="match_parent"
         android:layout_height="55dp"
         android:layout_marginStart="24dp"
