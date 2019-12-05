@@ -1,6 +1,5 @@
 package com.example.gymmanagmentsystem;
 
-import android.database.sqlite.SQLiteStatement;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -124,8 +123,8 @@ public class CreateAccountView extends AppCompatActivity {
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-                MFlag = 1;
-                TFlag = 0;
+                MFlag = 0;
+                TFlag = 1;
             }
         });
     }
@@ -148,7 +147,7 @@ public class CreateAccountView extends AppCompatActivity {
 
         int success = GymManagementController.signUp(emergContactNumber, personGymID, phoneNumber, streetName, cityName, provinceName,
 
-                postalCode, TFlag, MFlag);
+                postalCode, 1, 0);
 
         if(success == 0){
 

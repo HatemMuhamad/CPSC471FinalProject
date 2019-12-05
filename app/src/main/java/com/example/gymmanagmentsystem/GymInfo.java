@@ -1,5 +1,6 @@
 package com.example.gymmanagmentsystem;
 
+import android.database.Cursor;
 import android.os.Bundle;
 import android.widget.EditText;
 
@@ -28,15 +29,15 @@ public class GymInfo extends AppCompatActivity {
         EditText cityText = (EditText) findViewById(R.id.cityTextField);
         EditText provinceText = (EditText) findViewById(R.id.provinceTextField);
         EditText postalText = (EditText) findViewById(R.id.postalTextField);
-        String gymInfo = GymManagementController.viewGymInformation();
-        String[] GymInfo = gymInfo.split(",");
-        String gymName = GymInfo[0];
-        String ID = GymInfo[1];
-        String gymPhone = GymInfo[2];
-        String gymStreet = GymInfo[3];
-        String gymCity = GymInfo[4];
-        String gymProvince = GymInfo[5];
-        String gymPostal = GymInfo[6];
+        Cursor gymInfo = GymManagementController.viewGymInformation();
+        gymInfo.moveToFirst();
+        String ID = gymInfo.getString(gymInfo.getColumnIndexOrThrow("GymID"));
+        String gymName = gymInfo.getString(gymInfo.getColumnIndexOrThrow("Name"));
+        String gymPhone = gymInfo.getString(gymInfo.getColumnIndexOrThrow("Phone"));
+        String gymStreet = gymInfo.getString(gymInfo.getColumnIndexOrThrow("Street"));
+        String gymCity = gymInfo.getString(gymInfo.getColumnIndexOrThrow("City"));
+        String gymProvince = gymInfo.getString(gymInfo.getColumnIndexOrThrow("ProvState"));
+        String gymPostal = gymInfo.getString(gymInfo.getColumnIndexOrThrow("Postal"));
 
         if (ID.equals("NULL")) {
             ID = "";

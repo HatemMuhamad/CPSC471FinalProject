@@ -166,8 +166,29 @@ public class GymManagementController extends SQLiteOpenHelper {
         createBuysStatement.execute();
 
         System.out.println("\n\nSQLite Database should be created\n\n");
+        SQLiteStatement insertSessionsStatement = sqLiteDatabase.compileStatement("INSERT INTO Session (\n" +
+                "SessionID,\n" +
+                "StartTime ,\n" +
+                "SessionType,\n" +
+                "MuscleGroup,\n"+
+                "TrainerID,\n"+
+                "RoomNumber)\n"+
+                "VALUES ('3312','08:00','WeightLifting','Biceps','434343','1234')");
+        insertSessionsStatement.execute();
+
+        SQLiteStatement insertGymStatement = sqLiteDatabase.compileStatement("INSERT INTO Gym (\n" +
+                "Name ,\n" +
+                "GymID ,\n" +
+                "Phone ,\n" +
+                "Street ,\n" +
+                "City ,\n" +
+                "ProvState ,\n" +
+                "Postal)\n"+
+                "VALUES ('Sportiva','16141621','5879664481','24 Ave NW','Calgary','Alberta','T2N 4V5')");
+        insertGymStatement.execute();
 
     }
+
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
@@ -285,36 +306,19 @@ public class GymManagementController extends SQLiteOpenHelper {
     }
 
 
-    public static String viewAssignedSessions(String trainerID) throws SQLException {
-        String result = "";
-        int count = 0;
+    public static Cursor viewAssignedSessions(String trainerID) throws SQLException {
 
         String args[] = {trainerID};
 
-        Cursor cs = db.rawQuery("SELECT S.sessionID, S.sessionType, S.MuscleGroup, R.StartTime FROM session AS S, reserves AS R WHERE S.TrainerID = ? AND S.sessionID = R.sessionID", args);
+        return db.rawQuery("SELECT S.sessionID,S.StartTime, S.sessionType, S.MuscleGroup, S.RoomNumber FROM session AS S WHERE S.TrainerID = ?", args);
 
-        while (cs.moveToNext()) {
-            result += cs.getString(cs.getColumnIndexOrThrow("SessionID")) + "," + cs.getString(cs.getColumnIndexOrThrow("PersonGymID")) + "," +
-                    cs.getString(cs.getColumnIndexOrThrow("SessionType")) + "," + cs.getString(cs.getColumnIndexOrThrow("MuscleGroup")) + "," + cs.getString(cs.getColumnIndexOrThrow("TrainerID"));
-            count++;
-        }
-        result +=","+ String.valueOf(count);
-        return result;
     }
 
 
-    public static String viewGymInformation()throws SQLException{
-        String result = "";
+    public static Cursor viewGymInformation()throws SQLException{
 
-        Cursor cs = db.rawQuery("SELECT * FROM gym", null);
+        return db.rawQuery("SELECT * FROM gym", null);
 
-        while(cs.moveToNext()){
-            result += cs.getString(cs.getColumnIndexOrThrow("Name"))+","+cs.getString(cs.getColumnIndexOrThrow("GymID"))+","+
-                    cs.getString(cs.getColumnIndexOrThrow("Phone"))+","+cs.getString(cs.getColumnIndexOrThrow("Street"))
-                    +","+cs.getString(cs.getColumnIndexOrThrow("City"))+","+cs.getString(cs.getColumnIndexOrThrow("ProvState"))+","+
-                    cs.getString(cs.getColumnIndexOrThrow("Postal"));
-        }
-        return result;
     }
 
 

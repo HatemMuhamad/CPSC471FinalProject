@@ -52,6 +52,9 @@ public class LoginView extends AppCompatActivity {
                         startIntent.putExtra("trainerID", gymID);
                         startActivity(startIntent);
                     } else {
+                        Intent startIntent = new Intent(getApplicationContext(), TrainerPage.class);
+                        startIntent.putExtra("trainerID", gymID);
+                        startActivity(startIntent);
                         Toast.makeText(LoginView.this, "Invalid ID please try again!", Toast.LENGTH_LONG).show();
                     }
                 }catch (SQLException e){
