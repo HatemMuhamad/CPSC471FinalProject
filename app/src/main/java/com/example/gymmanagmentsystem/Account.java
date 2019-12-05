@@ -1,6 +1,7 @@
 package com.example.gymmanagmentsystem;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -47,14 +48,14 @@ public class Account extends AppCompatActivity {
             TextView phone = (TextView) findViewById(R.id.phoneTextView);
             TextView postal = (TextView) findViewById(R.id.postalTextView);
             TextView city = (TextView) findViewById(R.id.cityTextView);
-            String accountInfo = GymManagementController.viewAccountInformation(trainerID);
-            String[] accInfo = accountInfo.split(",");
-            String ENCres = accInfo[0];
-            String Stres = accInfo[1];
-            String Provres = accInfo[2];
-            String Phoneres = accInfo[3];
-            String postalres = accInfo[4];
-            String Cityres = accInfo[5];
+            Cursor accountInfo = GymManagementController.viewAccountInformation(trainerID);
+            accountInfo.moveToNext();
+            String ENCres =  accountInfo.getString(accountInfo.getColumnIndex("EmergencyContactPhone"));
+            String Phoneres = accountInfo.getString(accountInfo.getColumnIndex("Phone"));
+            String Stres = accountInfo.getString(accountInfo.getColumnIndex("Street"));
+            String Cityres = accountInfo.getString(accountInfo.getColumnIndex("City"));
+            String Provres = accountInfo.getString(accountInfo.getColumnIndex("ProvState"));
+            String postalres = accountInfo.getString(accountInfo.getColumnIndex("Postal"));
             if (ENCres.equals("NULL")) {
                 ENCres = "";
             }
