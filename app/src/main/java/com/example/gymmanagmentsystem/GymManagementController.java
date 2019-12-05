@@ -201,13 +201,23 @@ public class GymManagementController extends SQLiteOpenHelper {
 
 
 
-    public static void signUp(String ENC, String PID, String phone, String street, String city, String provState, String postal, int TFlag, int MFlag) throws SQLException {
+    public static int signUp(String ENC, String PID, String phone, String street, String city, String provState, String postal, int TFlag, int MFlag) throws SQLException {
 
         System.out.println("Sign Up Person");
 
-        String args[] = {ENC, phone, street, city, provState, postal, ((Integer)TFlag).toString(), ((Integer)MFlag).toString()};
+        String args[] = {ENC, PID, phone, street, city, provState, postal, ((Integer)TFlag).toString(), ((Integer)MFlag).toString()};
 
-        db.rawQuery("INSERT INTO person (EmergencyContactPhone, PersonGymID, Phone, Street, City, ProvState, Postal, TFlag, MFlag) VALUES (?, '12345', ?, ?, ?, ?, ?, ?, ?)", args);
+        try {
+            Cursor cs = db.rawQuery("INSERT INTO person (EmergencyContactPhone, PersonGymID, Phone, Street, City, ProvState, Postal, TFlag, MFlag) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)", args);
+            cs.moveToFirst();
+            cs.close();
+        }catch(Exception e){
+            e.printStackTrace();
+            return 0;
+        }
+
+        return 1;
+
     }
 
 
@@ -233,8 +243,10 @@ public class GymManagementController extends SQLiteOpenHelper {
 
         String args[] = {ENC, phone, street, city, provState, postal, personGymID};
 
-        db.rawQuery(" UPDATE person AS P SET P.emergencyContactPhone = ?, P.Phone = ?, P.Street = ?, P.City = ?, P.ProvState = ?, P.Postal = ? WHERE P.PersonGymID = ?", args);
+        Cursor cs = db.rawQuery(" UPDATE person AS P SET P.emergencyContactPhone = ?, P.Phone = ?, P.Street = ?, P.City = ?, P.ProvState = ?, P.Postal = ? WHERE P.PersonGymID = ?", args);
 
+        cs.moveToFirst();
+        cs.close();
     }
 
 
@@ -330,9 +342,13 @@ public class GymManagementController extends SQLiteOpenHelper {
         String args1[] = {SID, PID, sessionT, mg, TgymID};
         String args2[] = {PID, MFN, RN, SID, date.toString(), startTime.toString(), endTime.toString(), ((Integer)weightRange).toString()};
 
-        db.rawQuery("INSERT INTO Session VALUES (?,?,?,?,?)", args1);
-        db.rawQuery("INSERT INTO reserves VALUES (?,?,?,?,?,?,?,?)", args2);
+        Cursor cs1 = db.rawQuery("INSERT INTO Session VALUES (?,?,?,?,?)", args1);
+        Cursor cs2 = db.rawQuery("INSERT INTO reserves VALUES (?,?,?,?,?,?,?,?)", args2);
 
+        cs1.moveToFirst();
+        cs1.close();
+        cs2.moveToFirst();
+        cs2.close();
     }
 
 
@@ -342,8 +358,10 @@ public class GymManagementController extends SQLiteOpenHelper {
 
         String args[] = {PID, MFN, date.toString(), startTime.toString(), endTime.toString(), ((Integer)weightRange).toString()};
 
-        db.rawQuery("INSERT INTO Reserves VALUES (?,?,NULL,NULL,?,?,?,?)", null);
+        Cursor cs = db.rawQuery("INSERT INTO Reserves VALUES (?,?,NULL,NULL,?,?,?,?)", null);
 
+        cs.moveToFirst();
+        cs.close();
     }
 
 }
