@@ -41,7 +41,7 @@ public class CreateAccountView extends AppCompatActivity {
         final TextView provinceTextView = (TextView) findViewById(R.id.provinceTextField);
         final TextView postalTextView = (TextView) findViewById(R.id.postalTextField);
 
-        Button createAccountBtn = (Button) findViewById(R.id.createAccountBtn);
+        Button createAccountBtn = (Button) findViewById(R.id.createMemberAccountBtn);
         createAccountBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v)  {
@@ -135,29 +135,22 @@ public class CreateAccountView extends AppCompatActivity {
             }
         });
     }
-    public void addListenerOnSpinnerItemSelection() {
-        personType = (Spinner) findViewById(R.id.Person_spinner);
-        personType.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                Person = parent.getItemAtPosition(position).toString();
-                if(Person.equals("Trainer")){
-                    TFlag = 1;
-                    MFlag = 0;
-                }
-                else if(Person.equals("Member")){
-                    MFlag = 1;
-                    TFlag = 0;
-                }
-            }
+    private void memberSignupBtnListener() throws SQLException{
 
             @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-                MFlag = 1;
-                TFlag = 0;
+            public void onClick(View v) {
             }
-        });
-    }
+        };
+
+    private void trainerSignupBtnListener() throws SQLException{
+
+        @Override
+        public void onClick(View v) {
+        }
+    };
+
+
+}
 
 }
 

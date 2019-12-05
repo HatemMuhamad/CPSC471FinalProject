@@ -112,7 +112,7 @@
         app:layout_constraintVertical_bias="0.344" />
 
     <Button
-        android:id="@+id/createAccountBtn"
+        android:id="@+id/createMemberAccountBtn"
         android:layout_width="155dp"
         android:layout_height="55dp"
         android:layout_marginStart="24dp"
@@ -122,7 +122,7 @@
         android:bottomLeftRadius="10dp"
         android:bottomRightRadius="10dp"
         android:fontFamily="sans-serif-condensed-medium"
-        android:text="CREATE ACCOUNT"
+        android:text="CREATE MEMBER ACCOUNT"
         android:textAllCaps="false"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="#FFFFFF"
@@ -131,21 +131,34 @@
         android:topRightRadius="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.028"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.85" />
+        app:layout_constraintVertical_bias="0.845" />
 
-    <Spinner
-        android:id="@+id/Person_spinner"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:entries="@array/person_type"
-        android:spinnerMode="dropdown"
+    <Button
+        android:id="@+id/createTrainerAccountBtn"
+        android:layout_width="155dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/orangebtn"
+        android:bottomLeftRadius="10dp"
+        android:bottomRightRadius="10dp"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:text="CREATE TRAINER ACCOUNT"
+        android:textAllCaps="false"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:topLeftRadius="10dp"
+        android:topRightRadius="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.56" />
+        app:layout_constraintVertical_bias="0.845" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
