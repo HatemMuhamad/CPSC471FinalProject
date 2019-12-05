@@ -366,5 +366,9 @@ public class GymManagementController extends SQLiteOpenHelper {
         return user.getID();
     }
 
+    public static void deleteUser(){
+        user = null;
+    }
+
 
 }
