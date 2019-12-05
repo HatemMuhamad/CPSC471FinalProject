@@ -15,7 +15,7 @@ import java.sql.SQLException;
 public class TrainersSessions extends AppCompatActivity {
 
     private LinearLayout sessionList;
-
+    GymManagementController gymManagementController = null;
     String trainerID;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +23,7 @@ public class TrainersSessions extends AppCompatActivity {
         trainerID = extras.getString("trainerID");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.trainers_sessions);
+        gymManagementController = new GymManagementController(this);
 //    }
 //    public void populateFields() throws SQLException {
 //        String sessionInfoResult = GymManagementController.viewBookedSessions(trainerID);
@@ -31,6 +32,8 @@ public class TrainersSessions extends AppCompatActivity {
 //    }
         sessionList = (LinearLayout) findViewById(R.id.trainerSessionLL);
         try {
+            gymManagementController.createDatabase();
+            gymManagementController.open();
             populateFields();
         }
         catch (SQLException e){
@@ -46,7 +49,6 @@ public class TrainersSessions extends AppCompatActivity {
         Cursor sessions = GymManagementController.viewAssignedSessions(trainerID);
         System.out.println(trainerID);
         sessions.moveToFirst();
-        System.out.println("In Loop");
         int numOfSessions = sessions.getCount();
         for(int i = 0; i<numOfSessions; i++) {
             final View v = l.inflate(R.layout.trainers_sessions,null);

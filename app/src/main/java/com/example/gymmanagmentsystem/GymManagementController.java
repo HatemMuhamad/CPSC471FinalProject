@@ -5,28 +5,53 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.database.sqlite.SQLiteStatement;
+import android.widget.Toast;
 
-import androidx.annotation.Nullable;
-
+import java.io.IOException;
 import java.sql.Date;
 import java.sql.SQLException;
 import java.sql.Time;
 
 
-public class GymManagementController extends SQLiteOpenHelper {
+public class GymManagementController {
 
     public static SingletonUser user;
-
+    private DataBaseController dataBaseController;
+    private final Context context;
 
     public static final String DATABASE_NAME = "GymManagementSystem.db";
     public static SQLiteDatabase db = null;
 
-    public GymManagementController(@Nullable Context context) {
-        super(context, DATABASE_NAME, null, 1);
-        db = this.getWritableDatabase(); //this will create the database
+    public GymManagementController(Context context) {
+            this.context = context;
+            dataBaseController = new DataBaseController(context);
     }
 
-    @Override
+    public GymManagementController createDatabase() throws SQLException {
+        try {
+            dataBaseController.createDatabase();
+        }
+        catch (IOException e){
+            Toast.makeText(context, "Error in attempting to create database.", Toast.LENGTH_LONG).show();
+        }
+        return this;
+    }
+
+    public GymManagementController open() throws SQLException {
+        dataBaseController.openDatabase();
+        dataBaseController.close();
+        db = dataBaseController.getWritableDatabase();;
+
+        return this;
+    }
+
+    public void close(){
+        dataBaseController.close();
+    }
+
+
+
+
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
 
         System.out.println("\n\nCreating SQLLite database\n\n");
@@ -167,34 +192,17 @@ public class GymManagementController extends SQLiteOpenHelper {
         createBuysStatement.execute();
 
         System.out.println("\n\nSQLite Database should be created\n\n");
-        SQLiteStatement insertSessionsStatement = sqLiteDatabase.compileStatement("INSERT INTO Session (\n" +
-                "SessionID,\n" +
-                "StartTime ,\n" +
-                "SessionType,\n" +
-                "MuscleGroup,\n"+
-                "TrainerID,\n"+
-                "RoomNumber)\n"+
-                "VALUES ('3312','08:00','WeightLifting','Biceps','434343','1234')");
-        insertSessionsStatement.execute();
 
-        SQLiteStatement insertGymStatement = sqLiteDatabase.compileStatement("INSERT INTO Gym (\n" +
-                "Name ,\n" +
-                "GymID ,\n" +
-                "Phone ,\n" +
-                "Street ,\n" +
-                "City ,\n" +
-                "ProvState ,\n" +
-                "Postal)\n"+
-                "VALUES ('Sportiva','16141621','5879664481','24 Ave NW','Calgary','Alberta','T2N 4V5')");
-        insertGymStatement.execute();
 
     }
 
+    public static void loadDefaultSessions(){
+        Cursor cs = db.rawQuery("INSERT INTO Session (SessionID, null);
 
-    @Override
-    public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
-        //TODO how should we handle an upgrade?
+        cs.moveToNext();
+        cs.close();
     }
+
 
     public static SQLiteDatabase getDatabase(){
         return db;
@@ -205,7 +213,7 @@ public class GymManagementController extends SQLiteOpenHelper {
 
         String args[] = {personGymID};
 
-        Cursor cs = db.rawQuery("SELECT * FROM person WHERE PersonGymID = ?", args);
+        Cursor cs = db.rawQuery("SELECT * FROM Person WHERE PersonGymID = ?", args);
 
         if (cs.moveToNext()) {
             user = new SingletonUser(cs.getString(cs.getColumnIndexOrThrow("PersonGymID")),

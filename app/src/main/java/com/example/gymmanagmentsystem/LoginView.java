@@ -14,12 +14,15 @@ import java.sql.SQLException;
 
 
 public class LoginView extends AppCompatActivity {
-
+        GymManagementController gymManagementController =null;
             @Override
             protected void onCreate(Bundle savedInstanceState) {
                 super.onCreate(savedInstanceState);
                 setContentView(R.layout.sign_in);
+                gymManagementController = new GymManagementController(this);
+
                 try {
+                    gymManagementController.createDatabase();
                     signInBtnListener();
                 }catch(SQLException e){
                     e.printStackTrace();
@@ -40,8 +43,10 @@ public class LoginView extends AppCompatActivity {
         public void SignIn(){
             EditText personGymID = (EditText) findViewById(R.id.gymIDTextField);
                 try {
+                    gymManagementController.open();
                     String gymID = personGymID.getText().toString();
                     int signInStatus = GymManagementController.signIn(gymID);
+                    gymManagementController.close();
 
                     if (signInStatus == 1) {
                         Intent startIntent = new Intent(getApplicationContext(), MemberPage.class);

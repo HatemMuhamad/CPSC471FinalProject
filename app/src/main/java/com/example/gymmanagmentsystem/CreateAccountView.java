@@ -26,6 +26,7 @@ public class CreateAccountView extends AppCompatActivity {
     private int MFlag = 1;
     private Spinner personType;
     static java.sql.Connection myConnection;
+    GymManagementController gymManagementController = null;
 
 
 
@@ -33,7 +34,13 @@ public class CreateAccountView extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.sign_up);
-
+        gymManagementController = new GymManagementController(this);
+        try {
+            gymManagementController.createDatabase();
+            gymManagementController.open();
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
         final TextView emergContactNoTextView = (TextView) findViewById(R.id.ECNTextField);
         final TextView userPhoneNoTextView = (TextView) findViewById(R.id.phoneTextField);
         final TextView streetTextView = (TextView) findViewById(R.id.streetTextField);
