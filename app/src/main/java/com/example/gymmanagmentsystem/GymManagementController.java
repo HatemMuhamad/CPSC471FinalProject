@@ -127,10 +127,11 @@ public class GymManagementController extends SQLiteOpenHelper {
 
         SQLiteStatement createSessionStatement = sqLiteDatabase.compileStatement("CREATE TABLE Session (\n" +
                 "SessionID Varchar(15) NOT NULL,\n" +
-                "PersonGymID Varchar(15) NOT NULL,\n" +
+                "StartTime Varchar(45),\n" +
                 "SessionType Varchar(30) DEFAULT 'Generic',\n" +
                 "MuscleGroup Varchar(30),\n" +
                 "TrainerID Varchar(15) NOT NULL,\n" +
+                "RoomNumber Varchar(15),\n" +
                 "PRIMARY KEY(SessionID),\n" +
                 "UNIQUE (SessionID) );");
         createSessionStatement.execute();
@@ -138,12 +139,10 @@ public class GymManagementController extends SQLiteOpenHelper {
         SQLiteStatement createReservesStatement = sqLiteDatabase.compileStatement("CREATE TABLE Reserves (\n" +
                 "PersonGymID Varchar(15) NOT NULL,\n" +
                 "ManufactureNumber Varchar(15),\n" +
-                "RoomNumber Varchar(15),\n" +
-                "SessionID Varchar(15),\n" +
-                "Date DATE NOT NULL,\n" +
-                "StartTime TIME NOT NULL,\n" +
-                "EndTime TIME NOT NULL,\n" +
-                "WeightRange INT,\n" +
+                "Date Varchar(45) NOT NULL,\n" +
+                "StartTime Varchar(45) NOT NULL,\n" +
+                "EndTime Varchar(45) NOT NULL,\n" +
+                "WeightRange Varchar(45),\n" +
                 "PRIMARY KEY(PersonGymID,Date,StartTime),\n" +
                 "FOREIGN KEY(ManufactureNumber) REFERENCES Reservable(ManufactureNumber),\n" +
                 "FOREIGN KEY(RoomNumber) REFERENCES Room(RoomNumber),\n" +
@@ -204,10 +203,11 @@ public class GymManagementController extends SQLiteOpenHelper {
 
     public static void signUp(String ENC, String PID, String phone, String street, String city, String provState, String postal, int TFlag, int MFlag) throws SQLException {
 
-        String args[] = {ENC, PID, phone, street, city, provState, postal, ((Integer)TFlag).toString(), ((Integer)MFlag).toString()};
+        System.out.println("Sign Up Person");
 
-        db.rawQuery("INSERT INTO person (EmergencyContactPhone, PersonGymID, Phone, Street, City, ProvState, Postal, TFlag, MFlag) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)", args);
+        String args[] = {ENC, phone, street, city, provState, postal, ((Integer)TFlag).toString(), ((Integer)MFlag).toString()};
 
+        db.rawQuery("INSERT INTO person (EmergencyContactPhone, PersonGymID, Phone, Street, City, ProvState, Postal, TFlag, MFlag) VALUES (?, '12345', ?, ?, ?, ?, ?, ?, ?)", args);
     }
 
 

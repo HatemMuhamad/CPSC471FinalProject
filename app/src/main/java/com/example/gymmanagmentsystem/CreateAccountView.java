@@ -81,20 +81,24 @@ public class CreateAccountView extends AppCompatActivity {
                             Toast.LENGTH_SHORT).show();
                 }
 
-                SecureRandom random = new SecureRandom();
-                byte[] salt = new byte[16];
-                random.nextBytes(salt);
+                //TODO get this to work
+//                SecureRandom random = new SecureRandom();
+//                byte[] salt = new byte[16];
+//                random.nextBytes(salt);
+//
+//                MessageDigest md = null;
+//                try {
+//                    md = MessageDigest.getInstance("SHA-512");
+//                } catch (NoSuchAlgorithmException e) {
+//                    e.printStackTrace();
+//                }
+//                md.update(salt);
+//
+//                byte[] rand = md.digest(phoneNumber.getBytes(StandardCharsets.UTF_8));
+//                String personGymID = rand.toString().substring(0, 8);
 
-                MessageDigest md = null;
-                try {
-                    md = MessageDigest.getInstance("SHA-512");
-                } catch (NoSuchAlgorithmException e) {
-                    e.printStackTrace();
-                }
-                md.update(salt);
-
-                byte[] rand = md.digest(phoneNumber.getBytes(StandardCharsets.UTF_8));
-                String personGymID = rand.toString().substring(0, 8);
+                Random rand = new Random();
+                personGymID = rand.toString().substring(0, 8);
 
                 addListenerOnSpinnerItemSelection();
                 try{
@@ -139,17 +143,21 @@ public class CreateAccountView extends AppCompatActivity {
 //        CreateUser.setInt(9, MFlag);
 //        CreateUser.executeQuery();
 
-        SQLiteStatement statement = GymManagementController.getDatabase().compileStatement("INSERT INTO person VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
-        statement.bindString(1, emergContactNumber);
-        statement.bindString(2, personGymID);
-        statement.bindString(3, phoneNumber);
-        statement.bindString(4, streetName);
-        statement.bindString(5, cityName);
-        statement.bindString(6, provinceName);
-        statement.bindString(7, postalCode);
-        statement.bindDouble(8, TFlag);
-        statement.bindDouble(9, MFlag);
-        statement.execute();
+
+        GymManagementController.signUp(emergContactNumber, personGymID, phoneNumber, streetName, cityName, provinceName,
+                postalCode, TFlag, MFlag);
+
+//        SQLiteStatement statement = GymManagementController.getDatabase().compileStatement("INSERT INTO person VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+//        statement.bindString(1, emergContactNumber);
+//        statement.bindString(2, personGymID);
+//        statement.bindString(3, phoneNumber);
+//        statement.bindString(4, streetName);
+//        statement.bindString(5, cityName);
+//        statement.bindString(6, provinceName);
+//        statement.bindString(7, postalCode);
+//        statement.bindDouble(8, TFlag);
+//        statement.bindDouble(9, MFlag);
+//        statement.execute();
 
 
 
