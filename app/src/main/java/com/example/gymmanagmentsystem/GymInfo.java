@@ -1,12 +1,9 @@
-package com.example.gymmanagmentsystem.ToFinish;
+package com.example.gymmanagmentsystem;
 
 import android.os.Bundle;
 import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import com.example.gymmanagmentsystem.DatabaseController.GymManagementController;
-import com.example.gymmanagmentsystem.R;
 
 import java.sql.SQLException;
 

@@ -1,4 +1,4 @@
-package com.example.gymmanagmentsystem.ToFinish;
+package com.example.gymmanagmentsystem;
 
 import android.database.sqlite.SQLiteStatement;
 import android.os.Bundle;
@@ -10,9 +10,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import com.example.gymmanagmentsystem.DatabaseController.GymManagementController;
-import com.example.gymmanagmentsystem.R;
 
 import java.sql.SQLException;
 import java.util.Random;

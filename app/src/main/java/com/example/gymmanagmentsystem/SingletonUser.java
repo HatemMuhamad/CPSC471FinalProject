@@ -1,4 +1,4 @@
-package com.example.gymmanagmentsystem.ToFinish;
+package com.example.gymmanagmentsystem;
 
 public class SingletonUser {
 

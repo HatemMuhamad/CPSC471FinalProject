@@ -1,15 +1,10 @@
-package com.example.gymmanagmentsystem.ViewControllers;
+package com.example.gymmanagmentsystem;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import com.example.gymmanagmentsystem.R;
-import com.example.gymmanagmentsystem.ToFinish.CreateAccountView;
-import com.example.gymmanagmentsystem.DatabaseController.GymManagementController;
-import com.example.gymmanagmentsystem.ToFinish.LoginView;
 
 public class MainPageView extends AppCompatActivity {
 
@@ -30,7 +25,7 @@ public class MainPageView extends AppCompatActivity {
             }
         });
 
-        Button createAccountBtn = (Button)findViewById(R.id.createAccountBtn);
+        Button createAccountBtn = (Button)findViewById(R.id.signUpBtn);
         createAccountBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

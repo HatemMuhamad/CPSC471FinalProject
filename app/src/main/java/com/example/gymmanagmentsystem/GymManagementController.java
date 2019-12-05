@@ -1,4 +1,4 @@
-package com.example.gymmanagmentsystem.DatabaseController;
+package com.example.gymmanagmentsystem;
 
 import android.content.Context;
 import android.database.Cursor;
@@ -8,10 +8,7 @@ import android.database.sqlite.SQLiteStatement;
 
 import androidx.annotation.Nullable;
 
-import com.example.gymmanagmentsystem.ToFinish.SingletonUser;
-
 import java.sql.Date;
-import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Time;
 
@@ -278,6 +275,22 @@ public class GymManagementController extends SQLiteOpenHelper {
     }
 
 
+    public static String viewAssignedSessions(String trainerID) throws SQLException {
+        String result = "";
+        int count = 0;
+
+        String args[] = {trainerID};
+
+        Cursor cs = db.rawQuery("SELECT S.sessionID, S.sessionType, S.MuscleGroup, R.StartTime FROM session AS S, reserves AS R WHERE S.TrainerID = ? AND S.sessionID = R.sessionID", args);
+
+        while (cs.moveToNext()) {
+            result += cs.getString(cs.getColumnIndexOrThrow("SessionID")) + "," + cs.getString(cs.getColumnIndexOrThrow("PersonGymID")) + "," +
+                    cs.getString(cs.getColumnIndexOrThrow("SessionType")) + "," + cs.getString(cs.getColumnIndexOrThrow("MuscleGroup")) + "," + cs.getString(cs.getColumnIndexOrThrow("TrainerID"));
+            count++;
+        }
+        result +=","+ String.valueOf(count);
+        return result;
+    }
 
 
     public static String viewGymInformation()throws SQLException{
@@ -332,8 +345,5 @@ public class GymManagementController extends SQLiteOpenHelper {
         db.rawQuery("INSERT INTO Reserves VALUES (?,?,NULL,NULL,?,?,?,?)", null);
 
     }
-
-
-
 
 }

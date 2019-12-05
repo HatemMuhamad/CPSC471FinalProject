@@ -1,4 +1,4 @@
-package com.example.gymmanagmentsystem.ToFinish;
+package com.example.gymmanagmentsystem;
 
 import android.os.Bundle;
 
