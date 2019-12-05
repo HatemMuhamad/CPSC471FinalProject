@@ -1,5 +1,6 @@
 package com.example.gymmanagmentsystem;
 
+import android.database.Cursor;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -42,27 +43,32 @@ public class TrainersSessions extends AppCompatActivity {
     public void populateFields() throws SQLException {
         LayoutInflater l = (LayoutInflater) getApplicationContext().getSystemService(this.LAYOUT_INFLATER_SERVICE);
         System.out.println("Created thissss");
-        String sessionInfoResult = GymManagementController.viewAssignedSessions(trainerID);
-        String[] sessInfo = sessionInfoResult.split(",");
-        int numOfSessions = Integer.parseInt(sessInfo[5]);
-            for(int i = 0; i<numOfSessions; i++) {
-                final View v = l.inflate(R.layout.trainers_sessions,null);
-                TextView sessionID = v.findViewById(R.id.sessionIDTextView);
-                sessionID.setText(sessInfo[0]);
-                TextView memberID = v.findViewById(R.id.memberIDTextView);
-                memberID.setText(sessInfo[1]);
-                TextView sessionType = v.findViewById(R.id.sessionTypeTextView);
-                sessionType.setText(sessInfo[2]);
-                TextView muscleGroup = v.findViewById(R.id.muscleGroupTextView);
-                muscleGroup.setText(sessInfo[3]);
-                TextView TID = v.findViewById(R.id.trainerIDTextView);
-                TID.setText(sessInfo[4]);
-                if (v.getParent() != null) {
-                    ((ViewGroup) v.getParent()).removeView(v);
-                }
-                sessionList.addView(v, i, new LinearLayout.LayoutParams(LinearLayout.LayoutParams.FILL_PARENT, LinearLayout.LayoutParams.FILL_PARENT));
+        Cursor sessions = GymManagementController.viewAssignedSessions(trainerID);
+        System.out.println(trainerID);
+        sessions.moveToFirst();
+        System.out.println("In Loop");
+        int numOfSessions = sessions.getCount();
+        for(int i = 0; i<numOfSessions; i++) {
+            final View v = l.inflate(R.layout.trainers_sessions,null);
+            TextView sessionID = v.findViewById(R.id.sessionIDTextView);
+            sessionID.setText(sessions.getString(sessions.getColumnIndexOrThrow("SessionID")));
+            System.out.println(sessions.getString(sessions.getColumnIndexOrThrow("SessionID")));
+            TextView ST = v.findViewById(R.id.startTimeTextView);
+            ST.setText(sessions.getString(sessions.getColumnIndexOrThrow("StartTime")));
+            TextView sessionType = v.findViewById(R.id.sessionTypeTextView);
+            sessionType.setText(sessions.getString(sessions.getColumnIndexOrThrow("SessionType")));
+            TextView muscleGroup = v.findViewById(R.id.muscleGroupTextView);
+            muscleGroup.setText(sessions.getString(sessions.getColumnIndexOrThrow("MuscleGroup")));
+            TextView roomNumber = v.findViewById(R.id.roomNumberTextView);
+            roomNumber.setText(sessions.getString(sessions.getColumnIndexOrThrow("RoomNumber")));
 
+            if (v.getParent() != null) {
+                ((ViewGroup) v.getParent()).removeView(v);
             }
+            sessionList.addView(v, i, new LinearLayout.LayoutParams(LinearLayout.LayoutParams.FILL_PARENT, LinearLayout.LayoutParams.FILL_PARENT));
+            sessions.moveToNext();
+
+        }
 
     }
 

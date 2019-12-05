@@ -26,12 +26,12 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:textColor="#DCDCDC"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/postalTextField"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.838"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.895" />
+        app:layout_constraintVertical_bias="0.979" />
 
     <EditText
         android:id="@+id/postalTextField"
@@ -54,12 +54,12 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:textColor="#DCDCDC"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/provinceTextField"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.838"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.798" />
+        app:layout_constraintVertical_bias="0.964" />
 
     <TextView
         android:id="@+id/textView5"
@@ -190,12 +190,12 @@
         android:inputType="number"
         android:singleLine="false"
         android:textColor="#DCDCDC"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/gymName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.838"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.018" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
         android:id="@+id/gymName"
@@ -204,11 +204,12 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:textColor="#DCDCDC"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/gymPhone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.838"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.944" />
 
     <EditText
         android:id="@+id/gymPhone"
@@ -217,12 +218,12 @@
         android:ems="10"
         android:inputType="phone"
         android:textColor="#DCDCDC"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/streetTextField"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.838"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.596" />
+        app:layout_constraintVertical_bias="0.935" />
 
     <EditText
         android:id="@+id/streetTextField"
@@ -231,12 +232,12 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:textColor="#DCDCDC"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/cityTextField"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.838"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.704" />
+        app:layout_constraintVertical_bias="0.96" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

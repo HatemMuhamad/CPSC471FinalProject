@@ -183,6 +183,7 @@ public class CreateAccountView extends AppCompatActivity {
 //                byte[] rand = md.digest(phoneNumber.getBytes(StandardCharsets.UTF_8));
 //                String personGymID = rand.toString().substring(0, 8);
 
+
                Random rand = new Random();
                int number = rand.nextInt(10000);
                personGymID = ((Integer)number).toString();
@@ -191,6 +192,7 @@ public class CreateAccountView extends AppCompatActivity {
 
                    int success = GymManagementController.signUp(emergContactNumber, personGymID, phoneNumber, streetName, cityName, provinceName,
                            postalCode, 1, 0);
+
 
                    if(success == 0){
                        Toast.makeText(CreateAccountView.this, "Could Not Create Account",

@@ -40,7 +40,7 @@ public class LoginView extends AppCompatActivity {
         public void SignIn(){
             EditText personGymID = (EditText) findViewById(R.id.gymIDTextField);
 
-            try {
+                try {
                     String gymID = personGymID.getText().toString();
                     personGymID.setText("");
                     int signInStatus = GymManagementController.signIn(gymID);
@@ -54,11 +54,15 @@ public class LoginView extends AppCompatActivity {
                         startIntent.putExtra("trainerID", gymID);
                         startActivity(startIntent);
                     } else {
+                        Intent startIntent = new Intent(getApplicationContext(), TrainerPage.class);
+                        startIntent.putExtra("trainerID", gymID);
+                        startActivity(startIntent);
                         Toast.makeText(LoginView.this, "Invalid ID please try again!", Toast.LENGTH_LONG).show();
                     }
-            }catch (SQLException e){
-                e.printStackTrace();
-            }
+
+                }catch (SQLException e){
+                    e.printStackTrace();
+                }
 }
 }
 
