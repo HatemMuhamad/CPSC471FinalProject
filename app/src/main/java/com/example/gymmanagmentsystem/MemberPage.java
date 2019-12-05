@@ -51,6 +51,14 @@ public class MemberPage extends AppCompatActivity {
                 startActivity(startIntent);
             }
         });
+        Button reserveEquipmentBtn = (Button) findViewById(R.id.reserveEquipBtn);
+        reserveEquipmentBtn.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v){
+                Intent startIntent = new Intent(getApplicationContext(), GymInfo.class);
+                startIntent.putExtra("memberID", memberID);
+                startActivity(startIntent);
+            }
+        });
 
     }
 }

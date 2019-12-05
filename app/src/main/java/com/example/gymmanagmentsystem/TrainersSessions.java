@@ -37,19 +37,17 @@ public class TrainersSessions extends AppCompatActivity {
         System.out.println("Created thissss");
         String sessionInfoResult = dbc.viewAssignedSessions(trainerID);
         String[] sessInfo = sessionInfoResult.split(",");
-        int numOfSessions = Integer.parseInt(sessInfo[5]);
+        int numOfSessions = Integer.parseInt(sessInfo[4]);
             for(int i = 0; i<numOfSessions; i++) {
                 final View v = l.inflate(R.layout.trainers_sessions,null);
                 TextView sessionID = v.findViewById(R.id.sessionIDTextView);
                 sessionID.setText(sessInfo[0]);
-                TextView memberID = v.findViewById(R.id.memberIDTextView);
-                memberID.setText(sessInfo[1]);
                 TextView sessionType = v.findViewById(R.id.sessionTypeTextView);
-                sessionType.setText(sessInfo[2]);
+                sessionType.setText(sessInfo[1]);
                 TextView muscleGroup = v.findViewById(R.id.muscleGroupTextView);
-                muscleGroup.setText(sessInfo[3]);
-                TextView TID = v.findViewById(R.id.trainerIDTextView);
-                TID.setText(sessInfo[4]);
+                muscleGroup.setText(sessInfo[2]);
+                TextView ST = v.findViewById(R.id.startTimeTextView);
+                ST.setText(sessInfo[3]);
                 if (v.getParent() != null) {
                     ((ViewGroup) v.getParent()).removeView(v);
                 }

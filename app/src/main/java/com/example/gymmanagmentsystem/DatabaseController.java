@@ -91,13 +91,17 @@ public class DatabaseController {
 
     public String viewOngoingSessions() throws SQLException {
         String result = "";
+        int count = 0;
         PreparedStatement viewOngoingSession = myConnection.prepareStatement(
                 "SELECT * FROM session");
         ResultSet rs = viewOngoingSession.executeQuery();
         while (rs.next()) {
             result += rs.getString("SessionID") + "," + rs.getString("SessionType") + "," +
+                    rs.getString("Date") + "," +rs.getString("StartTime")+ "," +rs.getString("EndTime")+","+
                     rs.getString("MuscleGroup") + "," + rs.getString("TrainerID");
+            count++;
         }
+        result +=","+ count;
         return result;
     }
 
@@ -105,30 +109,30 @@ public class DatabaseController {
         String result = "";
         int count = 0;
         PreparedStatement viewBookedSession = myConnection.prepareStatement(
-                "SELECT S.sessionID, S.sessionType, S.MuscleGroup, R.StartTime FROM session AS S, reserves AS R WHERE S.PersonGymID = ? AND S.sessionID = R.sessionID");
+                "SELECT S.sessionID, S.sessionType, S.MuscleGroup, S.TrainerID, S.StartTime FROM session AS S, books AS B WHERE B.PersonGymID = ? AND S.sessionID = B.sessionID");
         viewBookedSession.setString(1, memberID);
         ResultSet rs = viewBookedSession.executeQuery();
         while (rs.next()) {
-            result += rs.getString("SessionID") + "," + rs.getString("PersonGymID") + "," + rs.getString("SessionType") + "," +
-                    rs.getString("MuscleGroup") + "," + rs.getString("TrainerID");
+            result += rs.getString("SessionID") + "," + rs.getString("SessionType") + "," +
+                    rs.getString("MuscleGroup") + "," + rs.getString("TrainerID") + "," + rs.getString("StartTime");
             count++;
         }
-        result +=","+ String.valueOf(count);
+        result +=","+ count;
         return result;
     }
     public String viewAssignedSessions(String trainerID) throws SQLException {
         String result = "";
         int count = 0;
         PreparedStatement viewBookedSession = myConnection.prepareStatement(
-                "SELECT S.sessionID, S.sessionType, S.MuscleGroup, R.StartTime FROM session AS S, reserves AS R WHERE S.TrainerID = ? AND S.sessionID = R.sessionID");
+                "SELECT S.sessionID, S.sessionType, S.MuscleGroup, S.StartTime FROM session AS S WHERE S.TrainerID = ?");
         viewBookedSession.setString(1, trainerID);
         ResultSet rs = viewBookedSession.executeQuery();
         while (rs.next()) {
-            result += rs.getString("SessionID") + "," + rs.getString("PersonGymID") + "," + rs.getString("SessionType") + "," +
-                    rs.getString("MuscleGroup") + "," + rs.getString("TrainerID");
+            result += rs.getString("SessionID") + "," + rs.getString("SessionType") + "," +
+                    rs.getString("MuscleGroup") + "," + rs.getString("StartTime");
             count++;
         }
-        result +=","+ String.valueOf(count);
+        result +=","+ count;
         return result;
     }
     public String viewGymInformation()throws SQLException{
@@ -158,8 +162,6 @@ public class DatabaseController {
                 "INSERT INTO books VALUES (?,?)");
         bookSession.setString(1, SID);
         bookSession.setString(2, PID);
-        bookSession.setString(6, PID);
-        bookSession.setString(9, SID);
         bookSession.executeUpdate();
 
     }

@@ -13,13 +13,13 @@ import java.sql.SQLException;
 
 
 public class signIn extends AppCompatActivity {
-    DatabaseController dbc = null;
+    //DatabaseController dbc = null;
 
             @Override
             protected void onCreate(Bundle savedInstanceState) {
                 super.onCreate(savedInstanceState);
                 setContentView(R.layout.sign_in);
-                dbc = new DatabaseController(this);
+                //dbc = new DatabaseController(this);
                 try {
                     signInBtnListener();
                 }catch(SQLException e){
