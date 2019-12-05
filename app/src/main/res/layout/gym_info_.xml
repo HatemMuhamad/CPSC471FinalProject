@@ -185,7 +185,6 @@
         android:id="@+id/ID"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="264dp"
         android:ems="10"
         android:inputType="number"
         android:singleLine="false"
@@ -195,7 +194,7 @@
         app:layout_constraintHorizontal_bias="0.838"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.018" />
+        app:layout_constraintVertical_bias="0.36" />
 
     <EditText
         android:id="@+id/gymName"

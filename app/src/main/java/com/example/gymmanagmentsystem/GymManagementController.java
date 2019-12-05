@@ -170,12 +170,6 @@ public class GymManagementController extends SQLiteOpenHelper {
 
         System.out.println("\n\nSQLite Database should be created\n\n");
 
-        GymManagementController.loadDefaultRooms();
-        GymManagementController.loadDefaultTrainers();
-        GymManagementController.loadDefaultSessions();
-        GymManagementController.loadGymInformation();
-        GymManagementController.loadDefaultReservables();
-
     }
 
 

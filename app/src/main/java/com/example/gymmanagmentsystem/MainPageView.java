@@ -15,7 +15,11 @@ public class MainPageView extends AppCompatActivity {
 
         GymManagementController sqlLiteDB = new GymManagementController(this.getApplicationContext());
 
-
+//        GymManagementController.loadDefaultRooms();
+//        GymManagementController.loadDefaultTrainers();
+//        GymManagementController.loadDefaultSessions();
+//        GymManagementController.loadGymInformation();
+//        GymManagementController.loadDefaultReservables();
 
         Button signInBtn = (Button)findViewById(R.id.signInBtn);
         signInBtn.setOnClickListener(new View.OnClickListener() {
