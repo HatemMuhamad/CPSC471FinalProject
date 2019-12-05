@@ -23,8 +23,8 @@ public class CreateAccountView extends AppCompatActivity {
     private String provinceName;
     private String postalCode;
     private String Person;
-    private int TFlag;
-    private int MFlag;
+    private int TFlag = 0;
+    private int MFlag = 1;
     private Spinner personType;
     static java.sql.Connection myConnection;
 
@@ -94,7 +94,8 @@ public class CreateAccountView extends AppCompatActivity {
 //                String personGymID = rand.toString().substring(0, 8);
 
                 Random rand = new Random();
-                personGymID = rand.toString().substring(0, 8);
+                int number = rand.nextInt(10000);
+                personGymID = ((Integer)number).toString();
 
                 addListenerOnSpinnerItemSelection();
                 try{
@@ -115,11 +116,16 @@ public class CreateAccountView extends AppCompatActivity {
                     TFlag = 1;
                     MFlag = 0;
                 }
+                else if(Person.equals("Member")){
+                    MFlag = 1;
+                    TFlag = 0;
+                }
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-
+                MFlag = 1;
+                TFlag = 0;
             }
         });
     }
@@ -140,9 +146,17 @@ public class CreateAccountView extends AppCompatActivity {
 //        CreateUser.executeQuery();
 
 
+        int success = GymManagementController.signUp(emergContactNumber, personGymID, phoneNumber, streetName, cityName, provinceName,
 
-        GymManagementController.signUp(emergContactNumber, personGymID, phoneNumber, streetName, cityName, provinceName,
                 postalCode, TFlag, MFlag);
+
+        if(success == 0){
+
+        }
+
+        else if (success == 1){
+
+        }
 
 //        SQLiteStatement statement = GymManagementController.getDatabase().compileStatement("INSERT INTO person VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
 //        statement.bindString(1, emergContactNumber);
