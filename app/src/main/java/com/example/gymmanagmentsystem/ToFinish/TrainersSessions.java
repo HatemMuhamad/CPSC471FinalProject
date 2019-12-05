@@ -1,4 +1,4 @@
-package com.example.gymmanagmentsystem;
+package com.example.gymmanagmentsystem.ToFinish;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -7,10 +7,12 @@ import android.widget.LinearLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.gymmanagmentsystem.DatabaseController.GymManagementController;
+import com.example.gymmanagmentsystem.R;
+
 import java.sql.SQLException;
 
 public class TrainersSessions extends AppCompatActivity {
-    DatabaseController dbc;
     String trainerID;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,10 +20,9 @@ public class TrainersSessions extends AppCompatActivity {
         trainerID = extras.getString("trainerID");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.trainers_sessions);
-        dbc = new DatabaseController(this);
     }
     public void populateFields() throws SQLException {
-        String sessionInfoResult = dbc.viewBookedSessions(trainerID);
+        String sessionInfoResult = GymManagementController.viewBookedSessions(trainerID);
         String[] sessInfo = sessionInfoResult.split(",");
         int numOfSessions = Integer.parseInt(sessInfo[5]);
         }

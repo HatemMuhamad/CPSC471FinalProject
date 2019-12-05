@@ -1,20 +1,21 @@
-package com.example.gymmanagmentsystem;
+package com.example.gymmanagmentsystem.ToFinish;
 
 import android.os.Bundle;
 import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.gymmanagmentsystem.DatabaseController.GymManagementController;
+import com.example.gymmanagmentsystem.R;
+
 import java.sql.SQLException;
 
 public class GymInfo extends AppCompatActivity {
-    private DatabaseController dbc;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Bundle extras = getIntent().getExtras();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.gym_info_);
-        dbc = new DatabaseController(this);
         try{
             viewGymInformation();
         }catch(SQLException e){
@@ -30,7 +31,7 @@ public class GymInfo extends AppCompatActivity {
         EditText cityText = (EditText) findViewById(R.id.cityTextField);
         EditText provinceText = (EditText) findViewById(R.id.provinceTextField);
         EditText postalText = (EditText) findViewById(R.id.postalTextField);
-        String gymInfo = dbc.viewGymInformation();
+        String gymInfo = GymManagementController.viewGymInformation();
         String[] GymInfo = gymInfo.split(",");
         String gymName = GymInfo[0];
         String ID = GymInfo[1];

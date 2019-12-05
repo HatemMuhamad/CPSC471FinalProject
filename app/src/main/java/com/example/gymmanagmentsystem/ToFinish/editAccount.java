@@ -1,4 +1,4 @@
-package com.example.gymmanagmentsystem;
+package com.example.gymmanagmentsystem.ToFinish;
 
 import android.os.Bundle;
 import android.view.View;
@@ -7,10 +7,12 @@ import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.gymmanagmentsystem.DatabaseController.GymManagementController;
+import com.example.gymmanagmentsystem.R;
+
 import java.sql.SQLException;
 
 public class editAccount extends AppCompatActivity {
-    DatabaseController dbc;
     String trainerID;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,7 +20,6 @@ public class editAccount extends AppCompatActivity {
         trainerID = extras.getString("trainerID");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.edit_account);
-        dbc = new DatabaseController(this);
         try{
             saveChangesBtnListener();
         }catch (SQLException e){
@@ -68,7 +69,7 @@ public class editAccount extends AppCompatActivity {
         String postal = postalText.getText().toString();
         String city = cityText.getText().toString();
         try{
-            dbc.editAccountInformation(ENC,trainerID,phone,street,city,prov,postal);
+            GymManagementController.editAccountInformation(ENC,trainerID,phone,street,city,prov,postal);
         }catch (SQLException e){
             e.printStackTrace();
         }

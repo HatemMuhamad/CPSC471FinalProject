@@ -1,4 +1,4 @@
-package com.example.gymmanagmentsystem;
+package com.example.gymmanagmentsystem.ToFinish;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,11 +8,13 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.gymmanagmentsystem.DatabaseController.GymManagementController;
+import com.example.gymmanagmentsystem.R;
+
 import java.sql.SQLException;
 
 public class Account extends AppCompatActivity {
 
-    DatabaseController dbc = null;
     String trainerID;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,7 +22,6 @@ public class Account extends AppCompatActivity {
         trainerID = extras.getString("trainerID");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.account);
-        dbc = new DatabaseController(this);
         try {
             ViewAccount();
         } catch (SQLException e) {
@@ -49,7 +50,7 @@ public class Account extends AppCompatActivity {
             TextView phone = (TextView) findViewById(R.id.phoneTextView);
             TextView postal = (TextView) findViewById(R.id.postalTextView);
             TextView city = (TextView) findViewById(R.id.cityTextView);
-            String accountInfo = dbc.viewAccountInformation(trainerID);
+            String accountInfo = GymManagementController.viewAccountInformation(trainerID);
             String[] accInfo = accountInfo.split(",");
             String ENCres = accInfo[0];
             String Stres = accInfo[1];

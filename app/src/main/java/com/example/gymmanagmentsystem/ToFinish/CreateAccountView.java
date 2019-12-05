@@ -1,21 +1,23 @@
-package com.example.gymmanagmentsystem;
+package com.example.gymmanagmentsystem.ToFinish;
 
 import android.database.sqlite.SQLiteStatement;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.gymmanagmentsystem.DatabaseController.GymManagementController;
+import com.example.gymmanagmentsystem.R;
+
 import java.sql.SQLException;
 import java.util.Random;
 
-public class SignUp extends AppCompatActivity {
+public class CreateAccountView extends AppCompatActivity {
     private String personGymID;
     private String emergContactNumber;
     private String phoneNumber;
@@ -60,22 +62,22 @@ public class SignUp extends AppCompatActivity {
 
                 //FIND A BETTER WAY TO DO THIS - I AM JUST DOING IT THIS WAY FOR NOW. IS THERE SOME ASSERT METHOD/FLAG ON THE TEXTVIEW ITSELF?
                 if (emergContactNumber.isEmpty()) {
-                    Toast.makeText(SignUp.this, "You must supply an Emergency Contact Number",
+                    Toast.makeText(CreateAccountView.this, "You must supply an Emergency Contact Number",
                             Toast.LENGTH_SHORT).show();
                 } else if (phoneNumber.isEmpty()) {
-                    Toast.makeText(SignUp.this, "You must supply a Phone Number",
+                    Toast.makeText(CreateAccountView.this, "You must supply a Phone Number",
                             Toast.LENGTH_SHORT).show();
                 } else if (streetName.isEmpty()) {
-                    Toast.makeText(SignUp.this, "You must supply a Street Name",
+                    Toast.makeText(CreateAccountView.this, "You must supply a Street Name",
                             Toast.LENGTH_SHORT).show();
                 } else if (cityName.isEmpty()) {
-                    Toast.makeText(SignUp.this, "You must supply a City Name",
+                    Toast.makeText(CreateAccountView.this, "You must supply a City Name",
                             Toast.LENGTH_SHORT).show();
                 } else if (provinceName.isEmpty()) {
-                    Toast.makeText(SignUp.this, "You must supply a Province Number",
+                    Toast.makeText(CreateAccountView.this, "You must supply a Province Number",
                             Toast.LENGTH_SHORT).show();
                 } else if (postalCode.isEmpty()) {
-                    Toast.makeText(SignUp.this, "You must supply a Postal Code",
+                    Toast.makeText(CreateAccountView.this, "You must supply a Postal Code",
                             Toast.LENGTH_SHORT).show();
                 }
                 addListenerOnSpinnerItemSelection();
@@ -121,7 +123,7 @@ public class SignUp extends AppCompatActivity {
 //        CreateUser.setInt(9, MFlag);
 //        CreateUser.executeQuery();
 
-        SQLiteStatement statement = DatabaseHelper.getDatabase().compileStatement("INSERT INTO person VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+        SQLiteStatement statement = GymManagementController.getDatabase().compileStatement("INSERT INTO person VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
         statement.bindString(1, emergContactNumber);
         statement.bindString(2, personGymID);
         statement.bindString(3, phoneNumber);
@@ -133,6 +135,10 @@ public class SignUp extends AppCompatActivity {
         statement.bindDouble(9, MFlag);
         statement.execute();
 
+
+
+        //TODO CHECK WHETHER ACCOUNT WAS CREATED, IF THEY WERE THEN RETURN TO THE MAIN PAGE AND TOAST WITH THEIR ID.
+        //TODO IF THEY WERENT, RETURN TO THE MAIN PAGE AND TOAST WITH AN ERROR MESSAGE
     }
 }
 
