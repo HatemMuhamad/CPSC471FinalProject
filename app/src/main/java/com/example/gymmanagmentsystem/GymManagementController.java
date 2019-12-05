@@ -361,5 +361,10 @@ public class GymManagementController extends SQLiteOpenHelper {
         cs.moveToFirst();
         cs.close();
     }
+    
+    public static String getUserID(){
+        return user.getID();
+    }
+
 
 }
