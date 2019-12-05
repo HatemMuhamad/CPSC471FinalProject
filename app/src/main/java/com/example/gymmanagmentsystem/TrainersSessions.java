@@ -41,7 +41,6 @@ public class TrainersSessions extends AppCompatActivity {
 
     public void populateFields() throws SQLException {
         LayoutInflater l = (LayoutInflater) getApplicationContext().getSystemService(this.LAYOUT_INFLATER_SERVICE);
-        System.out.println("Created thissss");
         String sessionInfoResult = GymManagementController.viewAssignedSessions(trainerID);
         String[] sessInfo = sessionInfoResult.split(",");
         int numOfSessions = Integer.parseInt(sessInfo[5]);

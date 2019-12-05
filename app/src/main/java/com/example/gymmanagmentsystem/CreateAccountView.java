@@ -16,7 +16,6 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 import java.sql.SQLException;
-import java.util.Random;
 
 public class CreateAccountView extends AppCompatActivity {
     private String personGymID;
@@ -141,14 +140,14 @@ public class CreateAccountView extends AppCompatActivity {
 
         SQLiteStatement statement = GymManagementController.getDatabase().compileStatement("INSERT INTO person VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
         statement.bindString(1, emergContactNumber);
-        statement.bindString(2, personGymID);
+        statement.bindString(2, "12345");
         statement.bindString(3, phoneNumber);
         statement.bindString(4, streetName);
         statement.bindString(5, cityName);
         statement.bindString(6, provinceName);
         statement.bindString(7, postalCode);
-        statement.bindDouble(8, TFlag);
-        statement.bindDouble(9, MFlag);
+        statement.bindString(8, ((Integer)TFlag).toString());
+        statement.bindString(9, ((Integer)MFlag).toString());
         statement.execute();
 
 
