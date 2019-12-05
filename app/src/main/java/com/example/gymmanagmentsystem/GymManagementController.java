@@ -12,9 +12,10 @@ import java.sql.Date;
 import java.sql.SQLException;
 import java.sql.Time;
 
+
 public class GymManagementController extends SQLiteOpenHelper {
 
-    static SingletonUser user;
+    public static SingletonUser user;
 
 
     public static final String DATABASE_NAME = "GymManagementSystem.db";
@@ -207,7 +208,7 @@ public class GymManagementController extends SQLiteOpenHelper {
         Cursor cs = db.rawQuery("SELECT * FROM person WHERE PersonGymID = ?", args);
 
         if (cs.moveToNext()) {
-            user = SingletonUser.getInstance(cs.getString(cs.getColumnIndexOrThrow("PersonGymID")),
+            user = new SingletonUser(cs.getString(cs.getColumnIndexOrThrow("PersonGymID")),
                     Integer.parseInt(cs.getString(cs.getColumnIndexOrThrow("MFlag"))),
                     Integer.parseInt(cs.getString(cs.getColumnIndexOrThrow("TFlag"))));
 
@@ -241,19 +242,12 @@ public class GymManagementController extends SQLiteOpenHelper {
 
 
 
-    public static String viewAccountInformation(String personGymID) throws SQLException {
-        String result = "";
+    public static Cursor viewAccountInformation(String personGymID) throws SQLException {
 
         String args[] = {personGymID};
 
-        Cursor cs = db.rawQuery("SELECT P.EmergencyContactPhone P.PersonGymID, P.Phone, P.Street, P.City, P.ProvState, P.Postal, P.MFlag FROM person AS P WHERE P.PersonGymID = ?", args);
+        return db.rawQuery("SELECT EmergencyContactPhone, PersonGymID, Phone, Street, City, ProvState, Postal, MFlag FROM Person  WHERE PersonGymID = ?", args);
 
-        while (cs.moveToNext()) {
-            result += cs.getString(cs.getColumnIndexOrThrow("EmergencyContactPhone")) + "," + cs.getString(cs.getColumnIndexOrThrow("PersonGymID")) + "," +
-                    cs.getString(cs.getColumnIndexOrThrow("Phone")) + "," + cs.getString(cs.getColumnIndexOrThrow("Street")) + "," +
-                    cs.getString(cs.getColumnIndexOrThrow("City")) + "," + cs.getString(cs.getColumnIndexOrThrow("ProvState")) + "," + cs.getString(cs.getColumnIndexOrThrow("Postal"));
-        }
-        return result;
     }
 
 
