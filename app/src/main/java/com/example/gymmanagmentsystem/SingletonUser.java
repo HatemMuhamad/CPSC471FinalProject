@@ -23,15 +23,15 @@ public class SingletonUser {
     }
 
 
-    private String getID() {
+    public String getID() {
         return gymID;
     }
 
-    private int getMFlag() {
+    public int getMFlag() {
         return MFlag;
     }
 
-    private int getTFlag(){
+    public int getTFlag(){
         return TFlag;
     }
 }
