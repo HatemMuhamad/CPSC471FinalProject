@@ -60,6 +60,7 @@ public class CreateAccountView extends AppCompatActivity {
                 provinceName = provinceTextView.getText().toString();
                 postalCode = postalTextView.getText().toString();
 
+                //TODO Get this to work
                 //FIND A BETTER WAY TO DO THIS - I AM JUST DOING IT THIS WAY FOR NOW. IS THERE SOME ASSERT METHOD/FLAG ON THE TEXTVIEW ITSELF?
                 if (emergContactNumber.isEmpty()) {
                     Toast.makeText(CreateAccountView.this, "You must supply an Emergency Contact Number",
@@ -103,7 +104,36 @@ public class CreateAccountView extends AppCompatActivity {
 
                 addListenerOnSpinnerItemSelection();
                 try{
-                    CreateUser();
+
+                    int success = GymManagementController.signUp(emergContactNumber, personGymID, phoneNumber, streetName, cityName, provinceName,
+                            postalCode, TFlag, MFlag);
+
+                    if(success == 0){
+                        Toast.makeText(CreateAccountView.this, "Could Not Create Account",
+                                Toast.LENGTH_SHORT).show();
+
+                        emergContactNoTextView.setText("");
+                        userPhoneNoTextView.setText("");
+                        streetTextView.setText("");
+                        cityTextView.setText("");
+                        provinceTextView.setText("");
+                        postalTextView.setText("");
+
+                    }
+
+                    else if (success == 1){
+                        Toast.makeText(CreateAccountView.this, "Your Gym ID is: " + personGymID,
+                                Toast.LENGTH_LONG).show();
+
+                        emergContactNoTextView.setText("");
+                        userPhoneNoTextView.setText("");
+                        streetTextView.setText("");
+                        cityTextView.setText("");
+                        provinceTextView.setText("");
+                        postalTextView.setText("");
+                    }
+
+
                 }catch(SQLException e){
                     e.printStackTrace();
                 }
@@ -134,50 +164,6 @@ public class CreateAccountView extends AppCompatActivity {
         });
     }
 
-
-    void CreateUser()throws SQLException{
-//        PreparedStatement CreateUser = myConnection.prepareStatement (
-//                "INSERT INTO person VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
-//        CreateUser.setString (1, emergContactNumber);
-//        CreateUser.setString(2, personGymID);
-//        CreateUser.setString(3, phoneNumber);
-//        CreateUser.setString(4, streetName);
-//        CreateUser.setString(5, cityName);
-//        CreateUser.setString(6, provinceName);
-//        CreateUser.setString(7, postalCode);
-//        CreateUser.setInt(8, TFlag);
-//        CreateUser.setInt(9, MFlag);
-//        CreateUser.executeQuery();
-
-
-        int success = GymManagementController.signUp(emergContactNumber, personGymID, phoneNumber, streetName, cityName, provinceName,
-                postalCode, TFlag, MFlag);
-
-        if(success == 0){
-
-        }
-
-        else if (success == 1){
-
-        }
-
-//        SQLiteStatement statement = GymManagementController.getDatabase().compileStatement("INSERT INTO person VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
-//        statement.bindString(1, emergContactNumber);
-//        statement.bindString(2, personGymID);
-//        statement.bindString(3, phoneNumber);
-//        statement.bindString(4, streetName);
-//        statement.bindString(5, cityName);
-//        statement.bindString(6, provinceName);
-//        statement.bindString(7, postalCode);
-//        statement.bindDouble(8, TFlag);
-//        statement.bindDouble(9, MFlag);
-//        statement.execute();
-
-
-
-        //TODO CHECK WHETHER ACCOUNT WAS CREATED, IF THEY WERE THEN RETURN TO THE MAIN PAGE AND TOAST WITH THEIR ID.
-        //TODO IF THEY WERENT, RETURN TO THE MAIN PAGE AND TOAST WITH AN ERROR MESSAGE
-    }
 }
 
 
