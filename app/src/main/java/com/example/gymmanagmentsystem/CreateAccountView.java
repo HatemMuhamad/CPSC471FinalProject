@@ -97,7 +97,6 @@ public class CreateAccountView extends AppCompatActivity {
                 int number = rand.nextInt(10000);
                 personGymID = ((Integer)number).toString();
 
-                addListenerOnSpinnerItemSelection();
                 try{
 
                     int success = GymManagementController.signUp(emergContactNumber, personGymID, phoneNumber, streetName, cityName, provinceName,
@@ -135,24 +134,11 @@ public class CreateAccountView extends AppCompatActivity {
             }
         });
     }
-    private void memberSignupBtnListener() throws SQLException{
-
-            @Override
-            public void onClick(View v) {
-            }
-        };
-
-    private void trainerSignupBtnListener() throws SQLException{
-
-        @Override
-        public void onClick(View v) {
-        }
-    };
-
-
 }
 
-}
+
+
+
 
 
 
