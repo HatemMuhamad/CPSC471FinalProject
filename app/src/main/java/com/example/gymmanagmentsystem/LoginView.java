@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -38,13 +39,7 @@ public class LoginView extends AppCompatActivity {
 
         public void SignIn(){
             EditText personGymID = (EditText) findViewById(R.id.gymIDTextField);
-            String gymID = personGymID.getText().toString();
-            if(gymID.equals("1")){
-                Intent startIntent = new Intent(getApplicationContext(), TrainerPage.class);
-                startIntent.putExtra("trainerID", gymID);
-                startActivity(startIntent);
-            }
-               /* try {
+                try {
                     String gymID = personGymID.getText().toString();
                     int signInStatus = GymManagementController.signIn(gymID);
 
@@ -61,7 +56,7 @@ public class LoginView extends AppCompatActivity {
                     }
                 }catch (SQLException e){
                     e.printStackTrace();
-                }*/
+                }
 }
 }
 
