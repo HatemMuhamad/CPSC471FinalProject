@@ -6,6 +6,12 @@ buildscript {
         jcenter()
         
     }
+
+    dependencies {
+        classpath 'com.readystatesoftware.sqliteasset:sqliteassethelper:+'
+
+
+    }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.5.1'
         
