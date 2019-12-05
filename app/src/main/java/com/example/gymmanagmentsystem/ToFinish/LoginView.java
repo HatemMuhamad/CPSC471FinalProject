@@ -1,4 +1,4 @@
-package com.example.gymmanagmentsystem;
+package com.example.gymmanagmentsystem.ToFinish;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,18 +9,19 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.gymmanagmentsystem.DatabaseController.GymManagementController;
+import com.example.gymmanagmentsystem.R;
+
 import java.sql.SQLException;
 
 
 
-public class signIn extends AppCompatActivity {
-    DatabaseController dbc = null;
+public class LoginView extends AppCompatActivity {
 
             @Override
             protected void onCreate(Bundle savedInstanceState) {
                 super.onCreate(savedInstanceState);
                 setContentView(R.layout.sign_in);
-                dbc = new DatabaseController(this);
                 try {
                     signInBtnListener();
                 }catch(SQLException e){
@@ -43,7 +44,7 @@ public class signIn extends AppCompatActivity {
             EditText personGymID = (EditText) findViewById(R.id.gymIDTextField);
                 try {
                     String gymID = personGymID.getText().toString();
-                    int signInStatus = dbc.signIn(gymID);
+                    int signInStatus = GymManagementController.signIn(gymID);
 
                     if (signInStatus == 1) {
                         Intent startIntent = new Intent(getApplicationContext(), MemberPage.class);
@@ -54,7 +55,7 @@ public class signIn extends AppCompatActivity {
                         startIntent.putExtra("trainerID", gymID);
                         startActivity(startIntent);
                     } else {
-                        Toast.makeText(signIn.this, "Invalid ID please try again!", Toast.LENGTH_LONG).show();
+                        Toast.makeText(LoginView.this, "Invalid ID please try again!", Toast.LENGTH_LONG).show();
                     }
                 }catch (SQLException e){
                     e.printStackTrace();

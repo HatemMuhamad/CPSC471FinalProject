@@ -1,4 +1,4 @@
-package com.example.gymmanagmentsystem;
+package com.example.gymmanagmentsystem.ToFinish;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,6 +6,8 @@ import android.view.View;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.gymmanagmentsystem.R;
 
 public class MemberPage extends AppCompatActivity {
     public String id;
@@ -25,13 +27,13 @@ public class MemberPage extends AppCompatActivity {
                 startActivity(startIntent);
             }
         });
-        Button bookSessionBtn = (Button)findViewById(R.id.bookSessionsBtn);
-        bookSessionBtn.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v){
-                Intent startIntent = new Intent(getApplicationContext(), OngoingSessions.class);
-                startIntent.putExtra("gymID", id);
-                startActivity(startIntent);
-            }
-        });
+//        Button bookSessionBtn = (Button)findViewById(R.id.bookSessionsBtn);
+//        bookSessionBtn.setOnClickListener(new View.OnClickListener() {
+//            public void onClick(View v){
+//                Intent startIntent = new Intent(getApplicationContext(), OngoingSessions.class);
+//                startIntent.putExtra("gymID", id);
+//                startActivity(startIntent);
+//            }
+//        });
     }
 }

@@ -2,11 +2,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.gymmanagmentsystem">
 
-<<<<<<< HEAD
+
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-=======
-    <uses-permission android:name="android.permission.INTERNET"/>
+
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 >>>>>>> JDBCWork
 
     <application
@@ -16,19 +18,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".OngoingSessions"></activity>
-        <activity android:name=".Receipts" />
-        <activity android:name=".MembershipInfo" />
-        <activity android:name=".editAccount" />
-        <activity android:name=".Account" />
-        <activity android:name=".signIn" />
-        <activity android:name=".SignUp" />
-        <activity android:name=".TrainerViewSessionsView" />
-        <activity android:name=".GymInfo" />
-        <activity android:name=".TrainersSessions" />
-        <activity android:name=".MemberPage" />
-        <activity android:name=".TrainerPage" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".ToFinish.OngoingSessions"></activity>
+        <activity android:name=".ToFinish.Receipts" />
+        <activity android:name=".ToFinish.MembershipInfo" />
+        <activity android:name=".ToFinish.editAccount" />
+        <activity android:name=".ToFinish.Account" />
+        <activity android:name=".ToFinish.LoginView" />
+        <activity android:name=".ToFinish.CreateAccountView" />
+        <activity android:name=".ToFinish.TrainerViewSessionsView" />
+        <activity android:name=".ToFinish.GymInfo" />
+        <activity android:name=".ToFinish.TrainersSessions" />
+        <activity android:name=".ToFinish.MemberPage" />
+        <activity android:name=".ToFinish.TrainerPage" />
+        <activity android:name=".ViewControllers.MainPageView">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
