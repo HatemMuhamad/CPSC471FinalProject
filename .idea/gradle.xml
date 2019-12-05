@@ -11,6 +11,11 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/mssql-jdbc-6.4.0.jre8" />
+            <option value="$PROJECT_DIR$/mysql-connector-java-3.0.17-ga-bin" />
+            <option value="$PROJECT_DIR$/mysql-connector-java-6.0.6-bin" />
+            <option value="$PROJECT_DIR$/mysql-connector-java-8.0.15" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

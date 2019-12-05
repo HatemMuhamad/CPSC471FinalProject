@@ -26,6 +26,15 @@ public class MemberPage extends AppCompatActivity {
             }
         });
 
+        Button logoutBtn = (Button)findViewById(R.id.logoutBtn);
+        logoutBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                GymManagementController.deleteUser();
+
+                MemberPage.super.finish();
+            }
+        });
 
         Button bookSessionBtn = (Button)findViewById(R.id.bookSessionsBtn);
         bookSessionBtn.setOnClickListener(new View.OnClickListener() {

@@ -42,6 +42,7 @@ public class LoginView extends AppCompatActivity {
 
             try {
                     String gymID = personGymID.getText().toString();
+                    personGymID.setText("");
                     int signInStatus = GymManagementController.signIn(gymID);
 
                     if (signInStatus == 1) {

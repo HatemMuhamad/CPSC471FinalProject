@@ -20,6 +20,31 @@
         app:srcCompat="@drawable/memberbg"/>
 
     <Button
+        android:id="@+id/logoutBtn"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/memberviewbtns"
+        android:bottomLeftRadius="10dp"
+        android:bottomRightRadius="10dp"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:text="LOGOUT"
+        android:textAllCaps="false"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="#DCDCDC"
+        android:textSize="20sp"
+        android:topLeftRadius="10dp"
+        android:topRightRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.989" />
+
+    <Button
         android:id="@+id/reserveEquipBtn"
         android:layout_width="match_parent"
         android:layout_height="55dp"
@@ -42,7 +67,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.905" />
+        app:layout_constraintVertical_bias="0.88" />
 
     <Button
         android:id="@+id/membershipBtn"
