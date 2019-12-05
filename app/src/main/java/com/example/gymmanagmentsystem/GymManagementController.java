@@ -145,8 +145,6 @@ public class GymManagementController extends SQLiteOpenHelper {
                 "WeightRange Varchar(45),\n" +
                 "PRIMARY KEY(PersonGymID,Date,StartTime),\n" +
                 "FOREIGN KEY(ManufactureNumber) REFERENCES Reservable(ManufactureNumber),\n" +
-                "FOREIGN KEY(RoomNumber) REFERENCES Room(RoomNumber),\n" +
-                "FOREIGN KEY(SessionID) REFERENCES Session(SessionID),\n" +
                 "UNIQUE (PersonGymID,Date,StartTime) );");
         createReservesStatement.execute();
 
