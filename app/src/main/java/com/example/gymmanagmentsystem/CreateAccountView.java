@@ -11,6 +11,10 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import java.security.SecureRandom;
 import java.sql.SQLException;
 import java.util.Random;
 
@@ -47,9 +51,8 @@ public class CreateAccountView extends AppCompatActivity {
             @Override
             public void onClick(View v)  {
 
-                Random rand = new Random(); //TODO We need to make sure that this is unique as well as random
 
-                personGymID = String.valueOf(rand.nextInt(10000));
+//                personGymID = String.valueOf(rand.nextInt(10000));
                 emergContactNumber = emergContactNoTextView.getText().toString();
                 phoneNumber = userPhoneNoTextView.getText().toString();
                 streetName = streetTextView.getText().toString();
@@ -77,6 +80,22 @@ public class CreateAccountView extends AppCompatActivity {
                     Toast.makeText(CreateAccountView.this, "You must supply a Postal Code",
                             Toast.LENGTH_SHORT).show();
                 }
+
+                SecureRandom random = new SecureRandom();
+                byte[] salt = new byte[16];
+                random.nextBytes(salt);
+
+                MessageDigest md = null;
+                try {
+                    md = MessageDigest.getInstance("SHA-512");
+                } catch (NoSuchAlgorithmException e) {
+                    e.printStackTrace();
+                }
+                md.update(salt);
+
+                byte[] rand = md.digest(phoneNumber.getBytes(StandardCharsets.UTF_8));
+                String personGymID = rand.toString().substring(0, 8);
+
                 addListenerOnSpinnerItemSelection();
                 try{
                     CreateUser();
