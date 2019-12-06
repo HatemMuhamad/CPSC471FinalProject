@@ -1,5 +1,6 @@
 package com.example.gymmanagmentsystem;
 
+import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -11,6 +12,8 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.sql.SQLException;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.Random;
 
 public class CreateAccountView extends AppCompatActivity {
@@ -211,6 +214,35 @@ public class CreateAccountView extends AppCompatActivity {
                         cityTextView.setText("");
                         provinceTextView.setText("");
                         postalTextView.setText("");
+
+                        Cursor cs = GymManagementController.getDatabase().rawQuery("SELECT * FROM Gym", null);
+                        String gymID = null;
+                        if(cs.moveToFirst()){
+                            gymID = cs.getString(cs.getColumnIndexOrThrow("GymID"));
+                        }
+
+                        //TODO create the membership and the has tuples
+                        String args[] = {gymID, personGymID};
+                        Cursor csInsertHas = GymManagementController.getDatabase().rawQuery("INSERT INTO has (GymID, PersonGymID) VALUES (?, ?)", args);
+                        csInsertHas.moveToNext();
+                        csInsertHas.close();
+
+                        Calendar cal = Calendar.getInstance();
+                        cal.add(Calendar.MONTH, 1);
+                        java.util.Date dt = cal.getTime();
+                        String renewalDate = dt.toString();
+
+                        String argsMember[] = {personGymID, renewalDate, "0", "0", "150"};
+                        Cursor csInsertMem = GymManagementController.getDatabase().rawQuery("INSERT INTO membership (PersonGymID, RenewalDate, TrainingRoomAccess, " +
+                                "PoolAccess, PricePerMonth) VALUES (?, ?, ?, ?, ?)", argsMember);
+
+                        csInsertMem.moveToFirst();
+                        csInsertMem.close();
+
+                        String argsBuys[] = {personGymID, renewalDate};
+                        Cursor csBuys = GymManagementController.getDatabase().rawQuery("INSERT INTO buys (PersonGymID, RenewalDate) VALUES (?, ?)", argsBuys);
+                        csBuys.moveToFirst();
+                        csBuys.close();
                     }
 
 

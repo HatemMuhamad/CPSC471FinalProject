@@ -20,7 +20,7 @@
         app:srcCompat="@drawable/bluebg"/>
 
     <TextView
-    android:id="@+id/nextPaymentText"
+    android:id="@+id/textview3"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:fontFamily="sans-serif-condensed-medium"
@@ -35,7 +35,7 @@
     app:layout_constraintVertical_bias="0.359" />
 
 <TextView
-    android:id="@+id/priceText"
+    android:id="@+id/textview2"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:fontFamily="sans-serif-condensed-medium"
@@ -50,7 +50,7 @@
     app:layout_constraintVertical_bias="0.281" />
 
     <TextView
-        android:id="@+id/tanningRoomAccessText"
+        android:id="@+id/textview4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-condensed-medium"
@@ -66,7 +66,7 @@
 
 
     <TextView
-        android:id="@+id/poolAccessText"
+        android:id="@+id/textvie6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-condensed-medium"
@@ -94,7 +94,7 @@
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent"
     app:layout_constraintVertical_bias="0.148" />
-<TextView
+<EditText
     android:id="@+id/nextPaymentDateTextView"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
@@ -108,7 +108,7 @@
     app:layout_constraintTop_toTopOf="parent"
     app:layout_constraintVertical_bias="0.358" />
 
-<TextView
+<EditText
     android:id="@+id/priceTextView"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
@@ -122,7 +122,7 @@
     app:layout_constraintTop_toTopOf="parent"
     app:layout_constraintVertical_bias="0.271" />
 
-    <TextView
+    <EditText
     android:id="@+id/poolAccessTextView"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
@@ -136,7 +136,7 @@
     app:layout_constraintTop_toTopOf="parent"
     app:layout_constraintVertical_bias="0.501" />
 
-<TextView
+<EditText
     android:id="@+id/tanningRoomAccessTextView"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"

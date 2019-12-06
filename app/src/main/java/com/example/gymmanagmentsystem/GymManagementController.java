@@ -173,380 +173,20 @@ public class GymManagementController extends SQLiteOpenHelper {
     }
 
 
-    public static void loadDefaultReservables (){
 
-        Cursor cs = db.rawQuery("INSERT INTO Reservable (\n" +
-                "ManufactureNumber,\n" +
-                "Description,\n" +
-                "GymID)\n" +
-                "VALUES ('12345678',' SQUAT RACK ','16141621')", null);
-        cs.moveToNext();
-        cs.close();
 
-        Cursor cs1 = db.rawQuery("INSERT INTO Reservable (\n" +
-                "ManufactureNumber,\n" +
-                "Description,\n" +
-                "GymID)\n" +
-                "VALUES ('12345679',' BENCH PRESS ','16141621')", null);
-        cs1.moveToNext();
-        cs1.close();
 
-        Cursor cs2 = db.rawQuery("INSERT INTO Reservable (\n" +
-                "ManufactureNumber,\n" +
-                "Description,\n" +
-                "GymID)\n" +
-                "VALUES ('12345680',' INCLINE BENCH PRESS ','16141621')", null);
-        cs2.moveToNext();
-        cs2.close();
 
-        Cursor cs3 = db.rawQuery("INSERT INTO Reservable (\n" +
-                "ManufactureNumber,\n" +
-                "Description,\n" +
-                "GymID)\n" +
-                "VALUES ('12345681',' HAMMER STRENGTH MACHINE ','16141621')", null);
-        cs3.moveToNext();
-        cs3.close();
 
-        Cursor cs4 = db.rawQuery("INSERT INTO Reservable (\n" +
-                "ManufactureNumber,\n" +
-                "Description,\n" +
-                "GymID)\n" +
-                "VALUES ('12345682',' CABLES AND PULLEYS ','16141621')", null);
-        cs4.moveToNext();
-        cs4.close();
 
-        Cursor cs5 = db.rawQuery("INSERT INTO Reservable (\n" +
-                "ManufactureNumber,\n" +
-                "Description,\n" +
-                "GymID)\n" +
-                "VALUES ('12345683',' LAT PULLDOWN MACHINE ','16141621')", null);
-        cs5.moveToNext();
-        cs5.close();
 
-        Cursor cs6 = db.rawQuery("INSERT INTO Reservable (\n" +
-                "ManufactureNumber,\n" +
-                "Description,\n" +
-                "GymID)\n" +
-                "VALUES ('12345684',' LEG EXTENSION MACHINE ','16141621')", null);
-        cs6.moveToNext();
-        cs6.close();
 
-        Cursor cs7 = db.rawQuery("INSERT INTO Reservable (\n" +
-                "ManufactureNumber,\n" +
-                "Description,\n" +
-                "GymID)\n" +
-                "VALUES ('12345685',' LEG CURL MACHINE ','16141621')", null);
-        cs7.moveToNext();
-        cs7.close();
-
-        Cursor cs8 = db.rawQuery("INSERT INTO Reservable (\n" +
-                "ManufactureNumber,\n" +
-                "Description,\n" +
-                "GymID)\n" +
-                "VALUES ('12345686',' HYPER EXTENSION BENCH ','16141621')", null);
-        cs8.moveToNext();
-        cs8.close();
-
-        Cursor cs9 = db.rawQuery("INSERT INTO Reservable (\n" +
-                "ManufactureNumber,\n" +
-                "Description,\n" +
-                "GymID)\n" +
-                "VALUES ('12345687',' SMITH MACHINE ','16141621')", null);
-        cs9.moveToNext();
-        cs9.close();
-
-//Accessories
-        Cursor csa = db.rawQuery("INSERT INTO Reservable (\n" +
-                "ManufactureNumber,\n" +
-                "Description,\n" +
-                "GymID)\n" +
-                "VALUES ('12345697',' Resistance bands','16141621')", null);
-        csa.moveToNext();
-        csa.close();
-
-        Cursor csa1 = db.rawQuery("INSERT INTO Reservable (\n" +
-                "ManufactureNumber,\n" +
-                "Description,\n" +
-                "GymID)\n" +
-                "VALUES ('12345688',' Firm Grid Foam Roller  ','16141621')", null);
-        csa1.moveToNext();
-        csa1.close();
-
-        Cursor csa2 = db.rawQuery("INSERT INTO Reservable (\n" +
-                "ManufactureNumber,\n" +
-                "Description,\n" +
-                "GymID)\n" +
-                "VALUES ('12345689',' 70lb Cast Iron Kettlebell  ','16141621')", null);
-        csa2.moveToNext();
-        csa2.close();
-
-        Cursor csa3 = db.rawQuery("INSERT INTO Reservable (\n" +
-                "ManufactureNumber,\n" +
-                "Description,\n" +
-                "GymID)\n" +
-                "VALUES ('12345690',' Weighted jump rope  ','16141621')", null);
-        csa3.moveToNext();
-        csa3.close();
-
-        Cursor csa4 = db.rawQuery("INSERT INTO Reservable (\n" +
-                "ManufactureNumber,\n" +
-                "Description,\n" +
-                "GymID)\n" +
-                "VALUES ('12345691',' Medicine ball  ','16141621')", null);
-        csa4.moveToNext();
-        csa4.close();
-
-        Cursor csa5 = db.rawQuery("INSERT INTO Reservable (\n" +
-                "ManufactureNumber,\n" +
-                "Description,\n" +
-                "GymID)\n" +
-                "VALUES ('12345692',' Dumbbells  ','16141621')", null);
-        csa5.moveToNext();
-        csa5.close();
-
-        Cursor csa6 = db.rawQuery("INSERT INTO Reservable (\n" +
-                "ManufactureNumber,\n" +
-                "Description,\n" +
-                "GymID)\n" +
-                "VALUES ('12345693',' Kettlebell ','16141621')", null);
-        csa6.moveToNext();
-        csa6.close();
-
-        Cursor csa7 = db.rawQuery("INSERT INTO Reservable (\n" +
-                "ManufactureNumber,\n" +
-                "Description,\n" +
-                "GymID)\n" +
-                "VALUES ('12345694',' Balance ball ','16141621')", null);
-        csa7.moveToNext();
-        csa7.close();
-
-        Cursor csa8 = db.rawQuery("INSERT INTO Reservable (\n" +
-                "ManufactureNumber,\n" +
-                "Description,\n" +
-                "GymID)\n" +
-                "VALUES ('12345695',' Yoga mat ','16141621')", null);
-        csa8.moveToNext();
-        csa8.close();
-
-        Cursor csa9 = db.rawQuery("INSERT INTO Reservable (\n" +
-                "ManufactureNumber,\n" +
-                "Description,\n" +
-                "GymID)\n" +
-                "VALUES ('12345696',' TRX ','16141621')", null);
-        csa9.moveToNext();
-        csa9.close();
-    }
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
         //TODO how should we handle an upgrade?
     }
-    public static void loadGymInformation(){
-        Cursor cs = db.rawQuery("INSERT INTO Gym (\n" +
-                "Name ,\n" +
-                "GymID ,\n" +
-                "Phone ,\n" +
-                "Street ,\n" +
-                "City ,\n" +
-                "ProvState ,\n" +
-                "Postal)\n"+
-                "VALUES ('Sportiva','16141621','5879664481','24 Ave NW','Calgary','Alberta','T2N 4V5')", null);
-        cs.moveToNext();
-        cs.close();
-    }
 
-    public static void loadDefaultRooms(){
-        Cursor cs = db.rawQuery("INSERT INTO Room (\n" +
-                "ActivityType,\n" +
-                "RoomNumber)\n" +
-                "VALUES ('Weighlifting room','1')", null);
-        cs.moveToNext();
-        cs.close();
-        Cursor cs1 = db.rawQuery("INSERT INTO Room (\n" +
-                "ActivityType,\n" +
-                "RoomNumber)\n" +
-                "VALUES ('Cardio room','2')", null);
-        cs1.moveToNext();
-        cs1.close();
-        Cursor cs2 = db.rawQuery("INSERT INTO Room (\n" +
-                "ActivityType,\n" +
-                "RoomNumber)\n" +
-                "VALUES ('Crossfit room','3')", null);
-        cs2.moveToNext();
-        cs2.close();
-    }
-    public static void loadDefaultTrainers(){
-        Cursor cs = db.rawQuery("INSERT INTO Person (\n" +
-                "EmergencyContactPhone ,\n" +
-                "PersonGymID,\n" +
-                "Phone ,\n" +
-                "Street,\n" +
-                "City,\n" +
-                "ProvState,\n" +
-                "Postal,\n" +
-                "TFlag,\n" +
-                "MFlag)\n" +
-                "VALUES ('4482234481','7770','5879664481','24th Ave','Calgary','Alberta','T2N 4V5','1','0')", null);
-        cs.moveToNext();
-        cs.close();
-
-        Cursor cs1 = db.rawQuery("INSERT INTO Person (\n" +
-                "EmergencyContactPhone ,\n" +
-                "PersonGymID,\n" +
-                "Phone ,\n" +
-                "Street,\n" +
-                "City,\n" +
-                "ProvState,\n" +
-                "Postal,\n" +
-                "TFlag,\n" +
-                "MFlag)\n" +
-                "VALUES ('3324441111','2011','5879663333','30th Ave','Calgary','Alberta','T2N 6V4','1','0')", null);
-        cs1.moveToNext();
-        cs1.close();
-        Cursor cs2 = db.rawQuery("INSERT INTO Person (\n" +
-                "EmergencyContactPhone ,\n" +
-                "PersonGymID,\n" +
-                "Phone ,\n" +
-                "Street,\n" +
-                "City,\n" +
-                "ProvState,\n" +
-                "Postal,\n" +
-                "TFlag,\n" +
-                "MFlag)\n" +
-                "VALUES ('55452234376','3553','9663992881','10th Ave','Calgary','Alberta','T2N 3V5','1','0')", null);
-        cs2.moveToNext();
-        cs2.close();
-        Cursor cs3 = db.rawQuery("INSERT INTO Person (\n" +
-                "EmergencyContactPhone ,\n" +
-                "PersonGymID,\n" +
-                "Phone ,\n" +
-                "Street,\n" +
-                "City,\n" +
-                "ProvState,\n" +
-                "Postal,\n" +
-                "TFlag,\n" +
-                "MFlag)\n" +
-                "VALUES ('5869665572','115','69629627','15th Ave','Calgary','Alberta','T2N 6V8','1','0')", null);
-        cs3.moveToNext();
-        cs3.close();
-        Cursor cs4 = db.rawQuery("INSERT INTO Person (\n" +
-                "EmergencyContactPhone ,\n" +
-                "PersonGymID,\n" +
-                "Phone ,\n" +
-                "Street,\n" +
-                "City,\n" +
-                "ProvState,\n" +
-                "Postal,\n" +
-                "TFlag,\n" +
-                "MFlag)\n" +
-                "VALUES ('5558884431','5874','7774442211','31th Ave','Calgary','Alberta','T2N 5V7','1','0')", null);
-        cs4.moveToNext();
-        cs4.close();
-
-    }
-    public static void loadDefaultSessions(){
-        Cursor cs = db.rawQuery("INSERT INTO Session (\n" +
-                "SessionID,\n" +
-                "StartTime ,\n" +
-                "SessionType,\n" +
-                "MuscleGroup,\n"+
-                "TrainerID,\n"+
-                "RoomNumber)\n"+
-                "VALUES ('3312','08:00','WeightLifting','Biceps','7770','1')", null);
-        cs.moveToNext();
-        cs.close();
-        Cursor cs1 = db.rawQuery("INSERT INTO Session (\n" +
-                "SessionID,\n" +
-                "StartTime ,\n" +
-                "SessionType,\n" +
-                "MuscleGroup,\n"+
-                "TrainerID,\n"+
-                "RoomNumber)\n"+
-                "VALUES ('2211','09:00','WeightLifting','Chest','3553','1')", null);
-        cs1.moveToNext();
-        cs1.close();
-        Cursor cs2 = db.rawQuery("INSERT INTO Session (\n" +
-                "SessionID,\n" +
-                "StartTime ,\n" +
-                "SessionType,\n" +
-                "MuscleGroup,\n"+
-                "TrainerID,\n"+
-                "RoomNumber)\n"+
-                "VALUES ('5566','10:00','WeightLifting','Legs','7770','1')", null);
-        cs2.moveToNext();
-        cs2.close();
-        Cursor cs3 = db.rawQuery("INSERT INTO Session (\n" +
-                "SessionID,\n" +
-                "StartTime ,\n" +
-                "SessionType,\n" +
-                "MuscleGroup,\n"+
-                "TrainerID,\n"+
-                "RoomNumber)\n"+
-                "VALUES ('7743','11:00','Cardio','N/A','115','2')", null);
-        cs3.moveToNext();
-        cs3.close();
-        Cursor cs4 = db.rawQuery("INSERT INTO Session (\n" +
-                "SessionID,\n" +
-                "StartTime ,\n" +
-                "SessionType,\n" +
-                "MuscleGroup,\n"+
-                "TrainerID,\n"+
-                "RoomNumber)\n"+
-                "VALUES ('9843','12:00','Crossfit','LowerBody','115','3')", null);
-        cs4.moveToNext();
-        cs4.close();
-        Cursor cs5 = db.rawQuery("INSERT INTO Session (\n" +
-                "SessionID,\n" +
-                "StartTime ,\n" +
-                "SessionType,\n" +
-                "MuscleGroup,\n"+
-                "TrainerID,\n"+
-                "RoomNumber)\n"+
-                "VALUES ('4476','01:00','Crossfit','UpperBody','2011','3')", null);
-        cs5.moveToNext();
-        cs5.close();
-        Cursor cs6 = db.rawQuery("INSERT INTO Session (\n" +
-                "SessionID,\n" +
-                "StartTime ,\n" +
-                "SessionType,\n" +
-                "MuscleGroup,\n"+
-                "TrainerID,\n"+
-                "RoomNumber)\n"+
-                "VALUES ('3361','02:00','WeightLifting','Biceps','115','1')", null);
-        cs6.moveToNext();
-        cs6.close();
-        Cursor cs7 = db.rawQuery("INSERT INTO Session (\n" +
-                "SessionID,\n" +
-                "StartTime ,\n" +
-                "SessionType,\n" +
-                "MuscleGroup,\n"+
-                "TrainerID,\n"+
-                "RoomNumber)\n"+
-                "VALUES ('6600','03:00','Cardio','N/A','2011','2')", null);
-        cs7.moveToNext();
-        cs7.close();
-        Cursor cs8 = db.rawQuery("INSERT INTO Session (\n" +
-                "SessionID,\n" +
-                "StartTime ,\n" +
-                "SessionType,\n" +
-                "MuscleGroup,\n"+
-                "TrainerID,\n"+
-                "RoomNumber)\n"+
-                "VALUES ('1614','04:00','WeightLifting','Back','7770','1')", null);
-        cs8.moveToNext();
-        cs8.close();
-        Cursor cs9 = db.rawQuery("INSERT INTO Session (\n" +
-                "SessionID,\n" +
-                "StartTime ,\n" +
-                "SessionType,\n" +
-                "MuscleGroup,\n"+
-                "TrainerID,\n"+
-                "RoomNumber)\n"+
-                "VALUES ('3398','05:00','Crossfit','UpperBody','5874','3')", null);
-        cs9.moveToNext();
-        cs9.close();
-
-    }
 
     public static SQLiteDatabase getDatabase(){
         return db;
@@ -570,6 +210,7 @@ public class GymManagementController extends SQLiteOpenHelper {
             return -1; //returns -1 if unauthorized
         }
     }
+
 
 
 
@@ -613,42 +254,38 @@ public class GymManagementController extends SQLiteOpenHelper {
         cs.moveToFirst();
         cs.close();
     }
+    public static Cursor viewmembership(String memberID){
+        String arg[] = {memberID};
+        return db.rawQuery("SELECT * FROM membership AS M, buys AS B WHERE M.PersonGymID = B.PersonGymID AND B.PersonGymID = ?", arg);
+    }
+    public static void loadMembership(){
+            Cursor cs = db.rawQuery("INSERT INTO membership (PersonGymID,RenewalDate,TrainingRoomAccess,PoolAccess,PricePerMonth) VALUES ('0000','8/4/2020','True','True','150')",null);
+            cs.moveToFirst();
+            cs.close();
+
+    }
+    public static void loadBuys(){
+        Cursor cs = db.rawQuery("INSERT INTO Buys (PersonGymID,MonthlyPatDate) VALUES ('0000','150')",null);
+        cs.moveToFirst();
+        cs.close();
+    }
 
 
-
-    public static String viewOngoingSessions() throws SQLException {
+    public static Cursor viewOngoingSessions() throws SQLException {
         String result = "";
 
-        Cursor cs = db.rawQuery("SELECT * FROM session", null);
-
-
-        while (cs.moveToNext()) {
-            result += cs.getString(cs.getColumnIndexOrThrow("SessionID")) + "," + cs.getString(cs.getColumnIndexOrThrow("PersonGymID")) + "," +
-                    cs.getString(cs.getColumnIndexOrThrow("SessionType")) + "," + cs.getString(cs.getColumnIndexOrThrow("MuscleGroup")) + "," +
-                    cs.getString(cs.getColumnIndexOrThrow("TrainerID"));
-        }
-
-        return result;
+        return db.rawQuery("SELECT * FROM session", null);
     }
 
 
 
-    public static String viewBookedSessions(String PersonGymID) throws SQLException {
-        String result = "";
-        int count = 0;
+    public static Cursor viewBookedSessions(String PersonGymID) throws SQLException {
 
         String args[] = {PersonGymID};
 
-        Cursor cs = db.rawQuery("SELECT S.sessionID, S.sessionType, S.MuscleGroup, R.StartTime FROM session AS S, reserves AS R WHERE S.PersonGymID = ? AND S.sessionID = R.sessionID", args);
+        return db.rawQuery("SELECT S.sessionID,S.StartTime, S.sessionType, S.MuscleGroup, S.RoomNumber  FROM Session AS S, Books AS B WHERE B.PersonGymID = ? AND S.sessionID = B.sessionID", args);
 
-        while (cs.moveToNext()) {
-            result += cs.getString(cs.getColumnIndexOrThrow("SessionID")) + "," + cs.getString(cs.getColumnIndexOrThrow("PersonGymID")) + "," +
-                    cs.getString(cs.getColumnIndexOrThrow("SessionType")) + "," + cs.getString(cs.getColumnIndexOrThrow("MuscleGroup")) + "," +
-                    cs.getString(cs.getColumnIndexOrThrow("TrainerID"));
-            count++;
-        }
-        result +=","+ String.valueOf(count);
-        return result;
+
     }
 
 
@@ -686,18 +323,17 @@ public class GymManagementController extends SQLiteOpenHelper {
 
 
 
-    public static void bookSession(String SID, String PID, String sessionT, String mg, String TgymID, String MFN, String RN, Date date, Time startTime, Time endTime, int weightRange)throws SQLException{
+    public static void bookSession(String SID, String PID)throws SQLException{
 
-        String args1[] = {SID, PID, sessionT, mg, TgymID};
-        String args2[] = {PID, MFN, RN, SID, date.toString(), startTime.toString(), endTime.toString(), ((Integer)weightRange).toString()};
+        String args[] = {SID, PID};
 
-        Cursor cs1 = db.rawQuery("INSERT INTO Session VALUES (?,?,?,?,?)", args1);
-        Cursor cs2 = db.rawQuery("INSERT INTO reserves VALUES (?,?,?,?,?,?,?,?)", args2);
 
-        cs1.moveToFirst();
-        cs1.close();
-        cs2.moveToFirst();
-        cs2.close();
+        Cursor cs = db.rawQuery("INSERT INTO Books VALUES (?,?)", args);
+
+
+        cs.moveToFirst();
+        cs.close();
+
     }
 
 
@@ -711,6 +347,10 @@ public class GymManagementController extends SQLiteOpenHelper {
 
         cs.moveToFirst();
         cs.close();
+    }
+    public static Cursor viewAllEquipment() throws SQLException{
+
+        return db.rawQuery("SELECT * FROM Reservable", null);
     }
     
     public static String getUserID(){

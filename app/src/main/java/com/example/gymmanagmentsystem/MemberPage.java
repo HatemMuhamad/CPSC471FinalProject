@@ -44,6 +44,14 @@ public class MemberPage extends AppCompatActivity {
                 startActivity(startIntent);
             }
         });
+        Button viewBookedSessionBtn = (Button)findViewById(R.id.viewBookSessionsBtn);
+        viewBookedSessionBtn.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v){
+                Intent startIntent = new Intent(getApplicationContext(), BookedSessions.class);
+                startIntent.putExtra("memberID", memberID);
+                startActivity(startIntent);
+            }
+        });
 
         Button membershipInfoBtn = (Button) findViewById(R.id.membershipBtn);
         membershipInfoBtn.setOnClickListener(new View.OnClickListener() {
@@ -61,6 +69,15 @@ public class MemberPage extends AppCompatActivity {
                 startActivity(startIntent);
             }
         });
+        Button reserveEquipBtn = (Button) findViewById(R.id.reserveEquipBtn);
+        reserveEquipBtn.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v){
+                Intent startIntent = new Intent(getApplicationContext(), ReserveEquipment.class);
+                startIntent.putExtra("memberID", memberID);
+                startActivity(startIntent);
+            }
+        });
+
 
     }
 }

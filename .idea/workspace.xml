@@ -10,9 +10,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="655f2f4b-8e47-4970-85dd-d268c8e88942" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/gradle_models.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/gradle_models.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/gymmanagmentsystem/CreateAccountView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/gymmanagmentsystem/CreateAccountView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/gymmanagmentsystem/GymManagementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/gymmanagmentsystem/GymManagementController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/gymmanagmentsystem/MainPageView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/gymmanagmentsystem/MainPageView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/gym_info_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/gym_info_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/gymmanagmentsystem/MemberPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/gymmanagmentsystem/MemberPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/gymmanagmentsystem/MembershipInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/gymmanagmentsystem/MembershipInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/gymmanagmentsystem/OngoingSessions.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/gymmanagmentsystem/OngoingSessions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/gymmanagmentsystem/TrainersSessions.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/gymmanagmentsystem/TrainersSessions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/member_page.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/member_page.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/membership_info.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/membership_info.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/ongoing_sessions.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/ongoing_sessions.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/mysql-connector-java-3.0.17-ga-bin/.gradle/" />
     <ignored path="$PROJECT_DIR$/mysql-connector-java-6.0.6-bin/.gradle/" />
@@ -40,49 +55,81 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_booked_sessions.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="163">
+              <caret line="58" column="48" lean-forward="true" selection-start-line="58" selection-start-column="48" selection-end-line="58" selection-end-column="48" />
+            </state>
+          </provider>
+          <provider editor-type-id="android-designer2" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/ongoing_sessions.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="88" column="43" lean-forward="true" selection-start-line="88" selection-start-column="43" selection-end-line="88" selection-end-column="43" />
+            </state>
+          </provider>
+          <provider editor-type-id="android-designer2" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/gymmanagmentsystem/Account.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="52">
+              <caret line="92" column="9" selection-start-line="92" selection-start-column="9" selection-end-line="93" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/gymmanagmentsystem/BookedSessions.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="37" column="68" selection-start-line="37" selection-start-column="50" selection-end-line="37" selection-end-column="68" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/gymmanagmentsystem/GymManagementController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="263">
-              <caret line="170" column="72" selection-start-line="170" selection-start-column="72" selection-end-line="170" selection-end-column="72" />
+            <state relative-caret-position="-2832">
+              <caret line="464" column="27" lean-forward="true" selection-start-line="464" selection-start-column="27" selection-end-line="464" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#22319#22320#0" expanded="true" />
-                <element signature="e#22344#22345#0" expanded="true" />
-                <element signature="e#29342#29343#0" expanded="true" />
-                <element signature="e#29377#29378#0" expanded="true" />
-                <element signature="e#29415#29416#0" expanded="true" />
-                <element signature="e#29442#29443#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/gymmanagmentsystem/GymInfo.java">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/gymmanagmentsystem/MembershipInfo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="31" column="14" selection-start-line="31" selection-start-column="14" selection-end-line="31" selection-end-column="14" />
+            <state relative-caret-position="230">
+              <caret line="29" column="91" selection-start-line="29" selection-start-column="91" selection-end-line="29" selection-end-column="91" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/gymmanagmentsystem/MainPageView.java">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/membership_info.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="21" column="59" lean-forward="true" selection-start-line="17" selection-start-column="9" selection-end-line="21" selection-end-column="59" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/gym_info_.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="194" column="53" lean-forward="true" selection-start-line="194" selection-start-column="53" selection-end-line="194" selection-end-column="53" />
+            <state relative-caret-position="17">
+              <caret line="104" column="45" selection-start-line="104" selection-start-column="45" selection-end-line="104" selection-end-column="45" />
             </state>
           </provider>
           <provider editor-type-id="android-designer2" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/gymmanagmentsystem/MainPageView.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="24" column="9" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
@@ -94,6 +141,15 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>trainerI</find>
+      <find>startTime</find>
+      <find>Book</find>
+      <find>loadBuy</find>
+      <find>loadB</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -104,16 +160,26 @@
         <option value="$PROJECT_DIR$/app/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/gymmanagmentsystem/DatabaseOpenHelper.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/DatabaseAccess.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/gymmanagmentsystem/CreateAccountView.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/trainers_sessions.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/gymmanagmentsystem/TrainersSessions.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/edit_account.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/gymmanagmentsystem/Account.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/gymmanagmentsystem/editAccount.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/gym_info_.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/member_page.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/gymmanagmentsystem/CreateAccountView.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/gymmanagmentsystem/OngoingSessions.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/gymmanagmentsystem/GymInfo.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/membership_info.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/gymmanagmentsystem/TrainersSessions.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/gymmanagmentsystem/MemberPage.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/reserve_equipment.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/gymmanagmentsystem/ReserveEquipment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/gymmanagmentsystem/BookedSessions.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/gymmanagmentsystem/MembershipInfo.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/gymmanagmentsystem/GymManagementController.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/gymmanagmentsystem/MainPageView.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/gym_info_.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_booked_sessions.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/ongoing_sessions.xml" />
       </list>
     </option>
   </component>
@@ -198,9 +264,13 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Documents/AndroidStudio/DeviceExplorer/emulator-5554/data/data/com.example.gymmanagmentsystem/databases" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
   </component>
   <component name="RecentsManager">
+    <key name="android.template.packageName">
+      <recent name="com.example.gymmanagmentsystem" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\thisi\Desktop\UNI STUFF\CPSC471\Project\JDBCWorks\app\src\main\assets\GymManagementSystem.db" />
     </key>
@@ -294,7 +364,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
       <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.2153518" />
@@ -305,7 +374,7 @@
       <window_info id="Resources Explorer" order="6" />
       <window_info id="Capture Tool" order="7" />
       <window_info id="Favorites" order="8" side_tool="true" />
-      <window_info anchor="bottom" id="Run" order="0" visible="true" weight="0.37406215" />
+      <window_info anchor="bottom" id="Run" order="0" weight="0.34619507" />
       <window_info anchor="bottom" id="Logcat" order="1" weight="0.3290461" />
       <window_info anchor="bottom" id="TODO" order="2" />
       <window_info anchor="bottom" id="Android Profiler" order="3" />
@@ -313,10 +382,10 @@
       <window_info anchor="bottom" id="Terminal" order="5" weight="0.3290461" />
       <window_info anchor="bottom" id="Event Log" order="6" sideWeight="0.50053304" side_tool="true" weight="0.3290461" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.3290461" />
-      <window_info anchor="bottom" id="Build" order="8" sideWeight="0.49946696" weight="0.3279743" />
+      <window_info anchor="bottom" id="Build" order="8" sideWeight="0.49946696" weight="0.3954984" />
       <window_info anchor="bottom" id="Find" order="9" />
-      <window_info active="true" anchor="right" id="Preview" visible="true" weight="0.32995737" />
-      <window_info anchor="right" id="Device File Explorer" order="0" side_tool="true" />
+      <window_info anchor="right" id="Preview" sideWeight="0.4994641" weight="0.23240939" />
+      <window_info active="true" anchor="right" id="Device File Explorer" order="0" sideWeight="0.5005359" side_tool="true" visible="true" weight="0.23240939" />
       <window_info anchor="right" id="Capture Analysis" order="1" />
       <window_info anchor="right" id="Gradle" order="2" />
       <window_info anchor="right" id="Theme Preview" order="3" />
@@ -359,31 +428,6 @@
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/sign_up.xml">
       <provider editor-type-id="text-editor" />
       <provider selected="true" editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/gymmanagmentsystem/LoginView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="36" column="11" selection-start-line="36" selection-start-column="11" selection-end-line="36" selection-end-column="11" />
-          <folding>
-            <element signature="e#996#997#0" expanded="true" />
-            <element signature="e#1044#1045#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/gymmanagmentsystem/OngoingSessions.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/gymmanagmentsystem/MembershipInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/gymmanagmentsystem/SingletonUser.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -434,21 +478,6 @@
       <provider editor-type-id="text-editor" />
       <provider selected="true" editor-type-id="android-designer2" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/trainers_sessions.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="796">
-          <caret line="110" column="52" selection-start-line="110" selection-start-column="52" selection-end-line="110" selection-end-column="52" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/gymmanagmentsystem/TrainersSessions.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="44" column="106" selection-start-line="44" selection-start-column="106" selection-end-line="44" selection-end-column="106" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/edit_account.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
@@ -457,24 +486,6 @@
       </provider>
       <provider editor-type-id="android-designer2" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/member_page.xml">
-      <provider editor-type-id="text-editor" />
-      <provider selected="true" editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/gymmanagmentsystem/Account.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="103" column="67" selection-start-line="103" selection-start-column="67" selection-end-line="103" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/gymmanagmentsystem/CreateAccountView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-66">
-          <caret line="126" selection-start-line="126" selection-end-line="126" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/gymmanagmentsystem/editAccount.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="341">
@@ -482,50 +493,151 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/gymmanagmentsystem/MemberPage.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/gym_info_.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="884">
-          <caret line="57" column="40" selection-start-line="57" selection-start-column="40" selection-end-line="57" selection-end-column="40" />
+        <state relative-caret-position="357">
+          <caret line="194" column="53" selection-start-line="194" selection-start-column="53" selection-end-line="194" selection-end-column="53" />
         </state>
       </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/gymmanagmentsystem/OngoingSessions.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="53" column="106" selection-start-line="53" selection-start-column="106" selection-end-line="53" selection-end-column="106" />
+          <folding>
+            <element signature="e#3036#3044#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/gymmanagmentsystem/CreateAccountView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3366">
+          <caret line="221" column="25" selection-start-line="221" selection-start-column="25" selection-end-line="221" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/member_page.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="29" column="39" selection-start-line="29" selection-start-column="39" selection-end-line="29" selection-end-column="39" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/gymmanagmentsystem/LoginView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="36" column="11" selection-start-line="36" selection-start-column="11" selection-end-line="36" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/trainers_sessions.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="38" lean-forward="true" selection-start-line="15" selection-start-column="38" selection-end-line="15" selection-end-column="38" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/gymmanagmentsystem/GymInfo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="31" column="14" selection-start-line="31" selection-start-column="14" selection-end-line="31" selection-end-column="14" />
+        <state relative-caret-position="505">
+          <caret line="67" column="42" selection-start-line="67" selection-start-column="42" selection-end-line="67" selection-end-column="42" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/gymmanagmentsystem/GymManagementController.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/gymmanagmentsystem/TrainersSessions.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="170" column="72" selection-start-line="170" selection-start-column="72" selection-end-line="170" selection-end-column="72" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#22319#22320#0" expanded="true" />
-            <element signature="e#22344#22345#0" expanded="true" />
-            <element signature="e#29342#29343#0" expanded="true" />
-            <element signature="e#29377#29378#0" expanded="true" />
-            <element signature="e#29415#29416#0" expanded="true" />
-            <element signature="e#29442#29443#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="561">
+          <caret line="61" column="34" lean-forward="true" selection-start-line="61" selection-start-column="34" selection-end-line="61" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/gymmanagmentsystem/MemberPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="529">
+          <caret line="72" column="23" selection-start-line="72" selection-start-column="23" selection-end-line="72" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/reserve_equipment.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="656">
+          <caret line="80" column="44" lean-forward="true" selection-start-line="80" selection-start-column="44" selection-end-line="80" selection-end-column="44" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/gymmanagmentsystem/ReserveEquipment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="24" column="31" lean-forward="true" selection-start-line="24" selection-start-column="31" selection-end-line="24" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/membership_info.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="104" column="45" selection-start-line="104" selection-start-column="45" selection-end-line="104" selection-end-column="45" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/gymmanagmentsystem/MembershipInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="29" column="91" selection-start-line="29" selection-start-column="91" selection-end-line="29" selection-end-column="91" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/gymmanagmentsystem/MainPageView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="21" column="59" lean-forward="true" selection-start-line="17" selection-start-column="9" selection-end-line="21" selection-end-column="59" />
+        <state relative-caret-position="323">
+          <caret line="24" column="9" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/gym_info_.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/gymmanagmentsystem/BookedSessions.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="194" column="53" lean-forward="true" selection-start-line="194" selection-start-column="53" selection-end-line="194" selection-end-column="53" />
+        <state relative-caret-position="153">
+          <caret line="37" column="68" selection-start-line="37" selection-start-column="50" selection-end-line="37" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_booked_sessions.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="163">
+          <caret line="58" column="48" lean-forward="true" selection-start-line="58" selection-start-column="48" selection-end-line="58" selection-end-column="48" />
         </state>
       </provider>
       <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/ongoing_sessions.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="88" column="43" lean-forward="true" selection-start-line="88" selection-start-column="43" selection-end-line="88" selection-end-column="43" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/gymmanagmentsystem/Account.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="52">
+          <caret line="92" column="9" selection-start-line="92" selection-start-column="9" selection-end-line="93" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/gymmanagmentsystem/GymManagementController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2832">
+          <caret line="464" column="27" lean-forward="true" selection-start-line="464" selection-start-column="27" selection-end-line="464" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
     </entry>
   </component>
 </project>

@@ -20,30 +20,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/bluebg" />
 
-    <Button
-        android:id="@+id/verifybookSessionBtn"
-        android:layout_width="155dp"
-        android:layout_height="55dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="24dp"
-        android:background="@drawable/transparentbtn"
-        android:bottomLeftRadius="10dp"
-        android:bottomRightRadius="10dp"
-        android:fontFamily="sans-serif-condensed-medium"
-        android:text="BOOK SESSION"
-        android:textAllCaps="false"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textColor="#FFFFFF"
-        android:textSize="20sp"
-        android:topLeftRadius="10dp"
-        android:topRightRadius="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.514"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.95" />
+
 
     <TextView
         android:id="@+id/patientFilterLabel"
@@ -53,7 +30,6 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="16dp"
-        android:text="Filter By:"
         android:textColor="#DCDCDC"
         android:textSize="24sp"
         android:typeface="serif"
@@ -81,7 +57,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-condensed-medium"
-        android:text="ONGOING SESSIONS:"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="#DCDCDC"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -96,7 +71,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="64dp"
-        app:layout_constraintBottom_toTopOf="@+id/verifybookSessionBtn"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -154,7 +129,7 @@
         app:layout_constraintTop_toBottomOf="@+id/sessionTypeTV"/>
 
     <TextView
-        android:id="@+id/trainerIDTV"
+        android:id="@+id/startTimeTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -163,5 +138,22 @@
         android:typeface="serif"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/muscleGroupTV"/>
+    <Button
+        android:id="@+id/bookingbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="250dp"
+        android:background="@drawable/transparentbtn"
+        android:bottomLeftRadius="10dp"
+        android:bottomRightRadius="10dp"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:topLeftRadius="10dp"
+        android:topRightRadius="10dp"
+        android:text="BOOK SESSION"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/roomNumberTextView"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
